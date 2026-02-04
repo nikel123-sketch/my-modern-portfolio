@@ -7,7 +7,7 @@ const Navber = () => {
     // all links---
   const links = [
     { name: "Home", path: "/" },
-    { name: "About Me", path: "/about" },
+    { name: "About Me", path: "/About" },
     { name: "Skills", path: "/Skills" },
     { name: "Projects", path: "/Projects" },
     { name: "Experience", path: "/Experience" },
@@ -41,6 +41,7 @@ const Navber = () => {
     <div className="">
       {/* start */}
       <div className="navbar ">
+
         {/* Mobile menu */}
         <div className="navbar-start">
           {/* deopdown */}
