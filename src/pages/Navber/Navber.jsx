@@ -7,11 +7,12 @@ const Navber = () => {
     // all links---
   const links = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Services", path: "/services" },
-    { name: "Portfolio", path: "/portfolio" },
-    { name: "Blog", path: "/blog" },
-    { name: "Contact", path: "/contact" },
+    { name: "About Me", path: "/about" },
+    { name: "Skills", path: "/Skills" },
+    { name: "Projects", path: "/Projects" },
+    { name: "Experience", path: "/Experience" },
+    { name: "Education", path: "/Education" },
+    { name: "Contact", path: "/Contact" },
   ];
 
 
