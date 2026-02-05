@@ -43,9 +43,7 @@ const Banner = () => {
           </h1>
 
           {/* fornted dev */}
-          <h1
-            className="font-bold text-3xl"
-          >
+          <h1 className="font-bold text-3xl animate-bounce">
             MERN Stack Developer | React.js Expert.
           </h1>
 

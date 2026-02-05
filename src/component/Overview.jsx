@@ -30,17 +30,17 @@ const Overview = () => {
             transition={{ duration: 1 }}
             className="w-full lg:w-1/2 bg-white dark:bg-slate-800/60 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-lg"
           >
-            <h1 className="mb-4 font-bold text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-red-400 via-indigo-400 to-red-600 text-transparent bg-clip-text">
+            <h1 className="animate-bounce mb-4 font-bold text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-red-400 via-indigo-400 to-red-600 text-transparent bg-clip-text">
               About Me
             </h1>
 
-            <h2 className="font-semibold text-xl sm:text-2xl mb-3">Who I Am</h2>
+            
 
-            <h3 className="font-medium text-lg sm:text-xl mb-4 underline">
+            <h3 className="font-bold text-3xl sm:text-xl ">
               I’m MD NIKEL ALI
             </h3>
 
-            <h2 className="mb-4 font-bold text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-red-400 via-indigo-400 to-red-600 text-transparent bg-clip-text">
+            <h2 className="mb-4 font-bold text-2xl sm:text-4xl lg:text-3xl bg-gradient-to-r from-red-400 via-indigo-400 to-red-600 text-transparent bg-clip-text">
               MERN Stack Developer | React.js Expert
             </h2>
 
