@@ -16,15 +16,12 @@ const Banner = () => {
     <div className="flex flex-col-reverse md:flex-row gap-6 md:gap-10 p-4 md:p-16 justify-center md:justify-between items-center overflow-hidden">
       {/* Right - My Details */}
       <div className="text-left dark:bg-slate-800/70 rounded-3xl p-5 w-full md:w-1/2">
-
-      
         <motion.div
           initial={{ opacity: 0, y: 100, scale: 0.8 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-
           {/* hello i am */}
           <h3
             className="mb-2 font-bold text-xl sm:text-2xl md:text-2xl tracking-wide
@@ -44,15 +41,12 @@ const Banner = () => {
           >
             MD NIKEL ALI
           </h1>
-          
+
           {/* fornted dev */}
           <h1
-            className="mb-3 font-bold text-2xl sm:text-3xl md:text-4xl
-                     bg-amber-50
-                     text-transparent bg-clip-text tracking-wide
-                     animate-type-loop overflow-hidden whitespace-nowrap border-r-0 border-indigo-500"
+            className="font-bold text-3xl"
           >
-            I'm a Fornted Developer
+            MERN Stack Developer | React.js Expert.
           </h1>
 
           {/* description */}
@@ -100,7 +94,6 @@ const Banner = () => {
               </motion.button>
             </Link>
           </div>
-          
         </motion.div>
       </div>
 
