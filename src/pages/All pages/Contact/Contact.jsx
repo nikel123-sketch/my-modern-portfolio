@@ -1,6 +1,7 @@
 import React from "react";
 import { Facebook, Github, Phone, Mail } from "lucide-react";
 import { motion } from "framer-motion";
+import { MdEmail } from "react-icons/md";
 
 const Contact = () => {
   const handleEmailClick = () => {
@@ -23,41 +24,42 @@ const Contact = () => {
       icon: <Mail size={22} className="text-[#EA4335]" />,
       onClick: handleEmailClick,
     },
+   
     {
       name: "Phone",
       icon: <Phone size={22} className="text-gray-300" />,
-      link: "tel:+8801707115247",
+      link: "tel:+8801331530219",
     },
-    {
-      name: "WhatsApp",
-      icon: (
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-          className="w-6 h-6"
-        />
-      ),
-      link: "https://wa.me/8801822522295?text=Hello%20Tahmid!",
-    },
+    // {
+    //   name: "WhatsApp",
+    //   icon: (
+    //     <img
+    //       src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+    //       className="w-6 h-6"
+    //     />
+    //   ),
+    //   link: "https://wa.me/8801822522295?text=Hello%20Tahmid!",
+    // },
     {
       name: "GitHub",
       icon: <Github size={22} className="text-white" />,
-      link: "https://github.com/md-tahmid-hasan-golap",
+      link: "https://github.com/nikel123-sketch",
     },
     {
       name: "Facebook",
       icon: <Facebook size={22} className="text-blue-500" />,
-      link: "https://www.facebook.com/g.lap.raj",
+      link: "https://www.facebook.com/nowsad.hossan.nikil.rubel",
     },
-    {
-      name: "LinkedIn",
-      icon: (
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-          className="w-6 h-6"
-        />
-      ),
-      link: "https://www.linkedin.com/in/tahmid-hasan-golap/?locale=en",
-    },
+    // {
+    //   name: "LinkedIn",
+    //   icon: (
+    //     <img
+    //       src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+    //       className="w-6 h-6"
+    //     />
+    //   ),
+    //   link: "https://www.linkedin.com/in/tahmid-hasan-golap/?locale=en",
+    // },
   ];
 
   return (
