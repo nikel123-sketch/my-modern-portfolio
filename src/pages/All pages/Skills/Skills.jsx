@@ -1,9 +1,10 @@
 import React from 'react';
+import MySkills from '../../../component/HomeComponent/MySkills';
 
 const Skills = () => {
     return (
       <div>
-        <h1>this is Skills</h1>
+       <MySkills></MySkills>
       </div>
     );
 };
