@@ -116,10 +116,17 @@ const MySkills = () => {
   };
 
   return (
-    <section id="skills" className="py-16 bg-black text-white px-6 md:px-16">
-      <h2 className="text-4xl font-bold  mb-12 text-center animate-bounce">
+    <section id="skills" className="py-6 bg-black text-white px-6 md:px-16">
+      
+      <motion.h2
+        className="text-4xl sm:text-5xl font-extrabold text-center mb-12 border-b-2 border-cyan-900 pb-2 "
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         My Skills
-      </h2>
+      </motion.h2>
 
       <motion.div
         className="grid grid-cols-1 md:grid-cols-2 gap-8"

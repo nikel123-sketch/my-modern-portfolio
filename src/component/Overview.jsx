@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Overview = () => {
     return (
-      <div className="">
+      <div className="bg-black">
         <div className="flex flex-col md:flex-row gap-6 md:gap-10 p-4 md:p-16 justify-center md:justify-between items-center overflow-hidden ">
           {/* Left Image */}
           <motion.div
@@ -34,11 +34,7 @@ const Overview = () => {
               About Me
             </h1>
 
-            
-
-            <h3 className="font-bold text-3xl sm:text-xl ">
-              I’m MD NIKEL ALI
-            </h3>
+            <h3 className="font-bold text-3xl sm:text-xl ">I’m MD NIKEL ALI</h3>
 
             <h2 className="mb-4 font-bold text-2xl sm:text-4xl lg:text-3xl bg-gradient-to-r from-red-400 via-indigo-400 to-red-600 text-transparent bg-clip-text">
               MERN Stack Developer | React.js Expert

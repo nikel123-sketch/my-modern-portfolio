@@ -5,7 +5,7 @@ import AboutMe from "../pages/All pages/About Me/AboutMe";
 import Skills from "../pages/All pages/Skills/Skills";
 import Projects from "../pages/All pages/Projects/Projects";
 import Experience from "../pages/All pages/Experience/Experience";
-import Education from "../pages/All pages/Education/Education";
+
 import Contact from "../pages/All pages/Contact/Contact";
 
 export const router = createBrowserRouter([
@@ -18,7 +18,7 @@ export const router = createBrowserRouter([
       { path: "Skills", Component: Skills },
       { path: "Projects", Component: Projects },
       { path: "Experience", Component: Experience },
-      { path: "Education", Component: Education },
+     
       { path: "Contact", Component: Contact},
     ],
   },

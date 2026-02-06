@@ -1,11 +1,149 @@
-import React from 'react';
+import React from "react";
+import { motion } from "framer-motion";
+import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
+import Tilt from "react-parallax-tilt"; // <-- added Tilt import
 
 const Experience = () => {
-    return (
-      <div>
-        <h1>this is Experience</h1>
+  const experiences = [
+    {
+      role: "Frontend Developer",
+      company: "Freelance",
+      time: "2024 – Present",
+      desc: "Building scalable React applications using TailwindCSS with strong focus on UI/UX and performance optimization.",
+    },
+    {
+      role: "Junior Full Stack Developer",
+      company: "Personal Projects",
+      time: "2023 – 2024",
+      desc: "Developed MERN stack apps with authentication systems, dashboards, REST APIs and role-based access.",
+    },
+  ];
+
+  const education = [
+    {
+      degree: "SSC",
+      institute: "Atawri Model Pilot High School",
+      year: "2016",
+      GPA: "4.33",
+      group: "Science",
+    },
+    {
+      degree: "HSC",
+      institute: "Mirza Golam Hafiz Degree College",
+      year: "2018",
+      GPA: "3.20",
+      group: "Science",
+    },
+  ];
+
+  return (
+    <section className="bg-black  px-4 sm:px-6 lg:px-8 p-6">
+      {/* Experience & Education */}
+      <motion.h2
+        className="text-4xl sm:text-5xl font-extrabold text-center mb-12 border-b-2 border-cyan-900 pb-2 "
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        Experience & Education 💻
+      </motion.h2>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 shadow-2xl   p-5 ">
+        {/* EXPERIENCE */}
+        <div className="space-y-10 relative  shadow-2xl shadow-teal-400 p-6 rounded-3xl">
+          <h2 className="text-3xl font-bold flex items-center gap-3">
+            <FaBriefcase className="text-indigo-500" /> Experience
+          </h2>
+
+          {experiences.map((item, index) => (
+            <Tilt
+              key={index}
+              tiltMaxAngleX={8}
+              tiltMaxAngleY={8}
+              scale={1.02}
+              glareEnable={false}
+            >
+              <motion.div
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 }}
+                whileHover={{ y: -6 }}
+                className="relative bg-white/70 dark:bg-slate-800 backdrop-blur rounded-2xl p-6 shadow-lg hover:shadow-2xl transition shadow-violet-500"
+              >
+                {/* side bar */}
+                <span className="absolute left-0 top-0 h-full w-2 bg-indigo-500 rounded-l-xl"></span>
+
+                {/* Frontend Developer */}
+                <h3 className="text-xl font-semibold">{item.role}</h3>
+
+                {/* freelance and date */}
+                <div className="flex justify-between text-md mt-1">
+                  <p className="text-indigo-400">{item.company}</p>
+                  <span className="text-gray-500">{item.time}</span>
+                </div>
+
+                {/* des */}
+                <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {item.desc}
+                </p>
+              </motion.div>
+            </Tilt>
+          ))}
+        </div>
+
+        {/* EDUCATION */}
+        <div className="space-y-10 shadow-2xl shadow-teal-400 p-5 rounded-3xl">
+          {/* EDUCATION */}
+          <h2 className="text-3xl font-bold flex items-center gap-3">
+            <FaGraduationCap className="text-indigo-500" /> Education
+          </h2>
+
+          {education.map((item, index) => (
+            <Tilt
+              key={index}
+              tiltMaxAngleX={8}
+              tiltMaxAngleY={8}
+              scale={1.02}
+              glareEnable={false}
+            >
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 }}
+                whileHover={{ y: -6 }}
+                className="relative bg-white/70 dark:bg-slate-800/60 backdrop-blur rounded-2xl p-6 shadow-lg hover:shadow-2xl transition shadow-violet-500"
+              >
+                {/* side bar */}
+                <span className="absolute left-0 top-0 h-full w-2 bg-indigo-500 rounded-l-xl"></span>
+
+                <div className="flex justify-between items-center">
+                  {/* SSC */}
+                  <h3 className="text-xl font-semibold">{item.degree}</h3>
+
+                  {/* gpa */}
+                  <span className=" bg-blue-200 text-black px-3 py-1 rounded-full font-bold">
+                    GPA {item.GPA}
+                  </span>
+                </div>
+
+                <p className="text-indigo-400 mt-1 font-bold">
+                  {item.institute}
+                </p>
+
+                <div className="flex justify-between text-sm text-gray-200 mt-3">
+                  <span>{item.group}</span>
+                  <span>{item.year}</span>
+                </div>
+              </motion.div>
+            </Tilt>
+          ))}
+        </div>
       </div>
-    );
+    </section>
+  );
 };
 
 export default Experience;

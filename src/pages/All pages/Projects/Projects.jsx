@@ -91,7 +91,7 @@ const cardVariants = {
 
 const Projects = () => {
   return (
-    <div className="py-16 px-4 sm:px-6 md:px-8 bg-gray-950 text-white">
+    <div className="py-6 px-4 sm:px-6 md:px-8 bg-gray-950 text-white">
       {/* My Projects */}
       <motion.h2
         className="text-4xl sm:text-5xl font-extrabold text-center mb-12 border-b-2 border-cyan-900 pb-2 "

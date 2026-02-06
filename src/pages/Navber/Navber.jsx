@@ -11,7 +11,6 @@ const Navber = () => {
     { name: "Skills", path: "/Skills" },
     { name: "Projects", path: "/Projects" },
     { name: "Experience", path: "/Experience" },
-    { name: "Education", path: "/Education" },
     { name: "Contact", path: "/Contact" },
   ];
 

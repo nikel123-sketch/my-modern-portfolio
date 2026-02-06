@@ -13,7 +13,7 @@ const icons = [facebook, whatsapp, linkdin, githup, email];
 const Banner = () => {
   return (
     // parent div--
-    <div className="flex flex-col-reverse md:flex-row gap-6 md:gap-10 p-4 md:p-16 justify-center md:justify-between items-center overflow-hidden">
+    <div className="flex flex-col-reverse md:flex-row gap-6 md:gap-10 p-4 md:p-16 justify-center md:justify-between items-center overflow-hidden bg-black">
       {/* Right - My Details */}
       <div className="text-left dark:bg-slate-800/70 rounded-3xl p-5 w-full md:w-1/2">
         <motion.div
