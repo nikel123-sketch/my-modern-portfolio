@@ -94,7 +94,7 @@ const Projects = () => {
     <div className="py-6 px-4 sm:px-6 md:px-8 bg-gray-950 text-white">
       {/* My Projects */}
       <motion.h2
-        className="text-4xl sm:text-5xl font-extrabold text-center mb-12 border-b-2 border-cyan-900 pb-2 "
+        className="text-4xl animate-bounce sm:text-5xl font-extrabold text-center mb-12 border-b-2 border-cyan-900 pb-2 "
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

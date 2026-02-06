@@ -40,7 +40,7 @@ const Experience = () => {
     <section className="bg-black  px-4 sm:px-6 lg:px-8 p-6">
       {/* Experience & Education */}
       <motion.h2
-        className="text-4xl sm:text-5xl font-extrabold text-center mb-12 border-b-2 border-cyan-900 pb-2 "
+        className="text-4xl sm:text-5xl font-extrabold text-center mb-1 border-b-2 border-cyan-900  animate-bounce "
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -49,7 +49,7 @@ const Experience = () => {
         Experience & Education 💻
       </motion.h2>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 shadow-2xl   p-5 ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 shadow-2xl   p-1 ">
         {/* EXPERIENCE */}
         <div className="space-y-10 relative  shadow-2xl shadow-teal-400 p-6 rounded-3xl">
           <h2 className="text-3xl font-bold flex items-center gap-3">

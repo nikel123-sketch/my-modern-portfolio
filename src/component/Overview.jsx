@@ -7,19 +7,45 @@ const Overview = () => {
       <div className="bg-black">
         <div className="flex flex-col md:flex-row gap-6 md:gap-10 p-4 md:p-16 justify-center md:justify-between items-center overflow-hidden ">
           {/* Left Image */}
-          <motion.div
-            initial={{ opacity: 0, y: 100, scale: 0.8 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1 }}
-            className="w-full lg:w-1/2"
-          >
-            <img
-              src="https://i.ibb.co/MyZL6c1n/bannrer-img.jpg"
-              alt=""
-              className=" rounded-3xl shadow-xl"
-            />
-          </motion.div>
+
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20">
+
+            
+            
+            <motion.div
+              className="flex justify-center md:justify-start"
+              initial={{ opacity: 0, y: 100, scale: 0.8 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{
+                type: "spring",
+                stiffness: 130,
+                damping: 18,
+                mass: 1,
+                delay: 0.3,
+              }}
+              whileHover={{
+                scale: 1.05,
+                rotate: 0, // subtle tilt effect
+                y: -5, // slight lift
+                transition: { type: "spring", stiffness: 100, damping: 10 },
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <motion.img
+                src="https://i.ibb.co/MyZL6c1n/bannrer-img.jpg"
+                alt="Banner"
+                className="max-w-[90%] sm:max-w-[400px] md:max-w-[450px] lg:max-w-[400px] rounded-4xl shadow-2xl shadow-purple-600 object-cover"
+                initial={{ y: -10 }}
+                animate={{ y: [0, 0, 10] }} // subtle floating animation
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                  ease: "easeInOut",
+                }}
+              />
+            </motion.div>
+          </div>
 
           {/* Right Content */}
 
