@@ -17,8 +17,6 @@ const Overview = () => {
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-
-            
               <motion.img
                 src="https://i.ibb.co/MyZL6c1n/bannrer-img.jpg"
                 alt="Banner"
@@ -38,38 +36,53 @@ const Overview = () => {
           {/* Right Content */}
 
           <motion.div
-            initial={{ opacity: 0, y: 100, scale: 0.8 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            initial={{ opacity: 0, y: 80 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1 }}
-            className="w-full lg:w-1/2 bg-white dark:bg-slate-800/60 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-lg"
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="w-full lg:w-1/2 bg-white dark:bg-slate-800/60 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl mt-6"
           >
-            <h1 className="animate-bounce mb-4 font-bold text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-red-400 via-indigo-400 to-red-600 text-transparent bg-clip-text">
+            {/* Animated Title */}
+            <motion.h1
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="mb-4 font-extrabold text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-red-400 via-indigo-400 to-purple-500 text-transparent bg-clip-text animate-bounce"
+            >
               About Me
-            </h1>
+            </motion.h1>
 
-            <h3 className="font-bold text-3xl sm:text-xl ">I’m MD NIKEL ALI</h3>
+            <h3 className="font-bold  text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-1">
+              I’m MD NIKEL ALI
+            </h3>
 
-            <h2 className="mb-4 font-bold text-2xl sm:text-4xl lg:text-3xl bg-gradient-to-r from-red-400 via-indigo-400 to-red-600 text-transparent bg-clip-text">
+            <motion.h2
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl "
+            >
               MERN Stack Developer | React.js Expert
-            </h2>
+            </motion.h2>
 
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed bg-green-900/20 p-4 rounded-xl hover:bg-gray-900 transition">
-              Hello! I’m a passionate MERN stack developer with a strong focus
-              on React.js. I specialize in building clean, modern, and
-              responsive web applications. I’m always exploring new technologies
-              and adapting to innovative tools to enhance my skills and deliver
-              impactful projects. I have hands-on experience in Frontend &
-              Backend development, UI/UX Design, Firebase, Node.js, MongoDB, VS
-              Code, and Figma. I am continuously exploring Next.js and other
-              modern frameworks to expand my expertise and stay up-to-date in
-              the web development world.
-            </p>
+            <div className="shadow-xl shadow-purple-600 rounded-4xl ">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed bg-green-600/10 p-4 rounded-xl transition hover:bg-green-900/20  ">
+                Hello! I’m a passionate MERN stack developer with a strong focus
+                on React.js. I specialize in building clean, modern, and
+                responsive web applications. I’m always exploring new
+                technologies and adapting innovative tools to enhance my skills
+                and deliver impactful projects. I have hands-on experience in
+                Frontend & Backend development, UI/UX Design, Firebase, Node.js,
+                MongoDB, VS Code, and Figma. I am continuously exploring Next.js
+                and other modern frameworks to expand my expertise and stay
+                up-to-date in the web development world.
+              </p>
+            </div>
 
             <Link to="/Contact">
               <motion.button
-                className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-xl shadow-md"
-                whileHover={{ scale: 1.1 }}
+                className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-xl shadow-lg font-medium"
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Contact Me
