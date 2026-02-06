@@ -9,32 +9,20 @@ const Overview = () => {
           {/* Left Image */}
 
           <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20">
-
-            
-            
             <motion.div
               className="flex justify-center md:justify-start"
-              initial={{ opacity: 0, y: 100, scale: 0.8 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{
-                type: "spring",
-                stiffness: 130,
-                damping: 18,
-                mass: 1,
-                delay: 0.3,
-              }}
-              whileHover={{
-                scale: 1.05,
-                rotate: 0, // subtle tilt effect
-                y: -5, // slight lift
-                transition: { type: "spring", stiffness: 100, damping: 10 },
-              }}
-              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: -200, scale: 1 }}
+              whileInView={{ opacity: 1, y: 10, scale: 1 }}
+              whileHover={{ scale: 1.03, y: 5 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
+
+            
               <motion.img
                 src="https://i.ibb.co/MyZL6c1n/bannrer-img.jpg"
                 alt="Banner"
-                className="max-w-[90%] sm:max-w-[400px] md:max-w-[450px] lg:max-w-[400px] rounded-4xl shadow-2xl shadow-purple-600 object-cover"
+                className="max-w-[90%] sm:max-w-[400px] md:max-w-[450px] lg:max-w-[400px] rounded-4xl shadow-xl shadow-purple-600 object-cover"
                 initial={{ y: -10 }}
                 animate={{ y: [0, 0, 10] }} // subtle floating animation
                 transition={{
