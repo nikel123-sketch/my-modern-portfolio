@@ -3,11 +3,12 @@ import { Link } from 'react-router';
 import { motion } from "framer-motion";
 
 const Overview = () => {
+  
     return (
       <div className="bg-black">
         <div className="flex flex-col md:flex-row gap-6 md:gap-10 p-4 md:p-16 justify-center md:justify-between items-center overflow-hidden ">
-          {/* Left Image */}
 
+          {/* Left Image */}
           <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20">
             <motion.div
               className="flex justify-center md:justify-start"
@@ -34,7 +35,6 @@ const Overview = () => {
           </div>
 
           {/* Right Content */}
-
           <motion.div
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}

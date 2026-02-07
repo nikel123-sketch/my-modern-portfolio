@@ -52,9 +52,15 @@ const Experience = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 shadow-2xl   p-1 ">
         {/* EXPERIENCE */}
         <div className="space-y-10 relative  shadow-2xl shadow-teal-400 p-6 rounded-3xl">
-          <h2 className="text-3xl font-bold flex items-center gap-3">
-            <FaBriefcase className="text-indigo-500" /> Experience
-          </h2>
+          <motion.h2
+            initial={{ opacity: 0, x: -300 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            <h2 className="text-3xl font-bold flex items-center gap-3">
+              <FaBriefcase className="text-indigo-500" /> Experience
+            </h2>
+          </motion.h2>
 
           {experiences.map((item, index) => (
             <Tilt
@@ -64,31 +70,44 @@ const Experience = () => {
               scale={1.02}
               glareEnable={false}
             >
-              <motion.div
-                initial={{ opacity: 0, x: -40 }}
+              <motion.h2
+                initial={{ opacity: 0, x: -300 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                whileHover={{ y: -6 }}
-                className="relative bg-white/70 dark:bg-slate-800 backdrop-blur rounded-2xl p-6 shadow-lg hover:shadow-2xl transition shadow-violet-500"
+                transition={{ delay: 0.3, duration: 0.0 }}
+                className="relative bg-white/70 dark:bg-slate-800 backdrop-blur rounded-2xl p-6 shadow-lg hover:shadow-2xl transition shadow-amber-300"
               >
-                {/* side bar */}
-                <span className="absolute left-0 top-0 h-full w-2 bg-indigo-500 rounded-l-xl"></span>
+                <motion.div
+                  initial={{ opacity: 0, x: -40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 }}
+                  whileHover={{ y: -6 }}
+                  className="relative bg-white/70 dark:bg-slate-800 backdrop-blur rounded-2xl p-6 shadow-lg hover:shadow-2xl transition shadow-violet-500"
+                >
+                  {/* side bar */}
+                  <span className="absolute left-0 top-0 h-full w-2 bg-indigo-500 rounded-l-xl"></span>
 
-                {/* Frontend Developer */}
-                <h3 className="text-xl font-semibold">{item.role}</h3>
+                  {/* Frontend Developer */}
+                  <motion.h2
+                    initial={{ opacity: 0, x: -300 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.3, duration: 0.6 }}
+                  >
+                    <h3 className="text-xl font-semibold">{item.role}</h3>
+                  </motion.h2>
 
-                {/* freelance and date */}
-                <div className="flex justify-between text-md mt-1">
-                  <p className="text-indigo-400">{item.company}</p>
-                  <span className="text-gray-500">{item.time}</span>
-                </div>
+                  {/* freelance and date */}
+                  <div className="flex justify-between text-md mt-1">
+                    <p className="text-indigo-400 font-bold">{item.company}</p>
+                    <span className="text-gray-100 font-bold">{item.time}</span>
+                  </div>
 
-                {/* des */}
-                <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
-                  {item.desc}
-                </p>
-              </motion.div>
+                  {/* des */}
+                  <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              </motion.h2>
             </Tilt>
           ))}
         </div>
@@ -96,9 +115,15 @@ const Experience = () => {
         {/* EDUCATION */}
         <div className="space-y-10 shadow-2xl shadow-teal-400 p-5 rounded-3xl">
           {/* EDUCATION */}
-          <h2 className="text-3xl font-bold flex items-center gap-3">
-            <FaGraduationCap className="text-indigo-500" /> Education
-          </h2>
+          <motion.h2
+            initial={{ opacity: 0, x: 300 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            <h2 className="text-3xl font-bold flex items-center gap-3">
+              <FaGraduationCap className="text-indigo-500" /> Education
+            </h2>
+          </motion.h2>
 
           {education.map((item, index) => (
             <Tilt
@@ -108,36 +133,49 @@ const Experience = () => {
               scale={1.02}
               glareEnable={false}
             >
-              <motion.div
-                initial={{ opacity: 0, x: 40 }}
+              <motion.h2
+                initial={{ opacity: 0, x: 300 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                whileHover={{ y: -6 }}
-                className="relative bg-white/70 dark:bg-slate-800/60 backdrop-blur rounded-2xl p-6 shadow-lg hover:shadow-2xl transition shadow-violet-500"
+                transition={{ delay: 0.3, duration: 0.0 }}
+                className="relative bg-white/70 dark:bg-slate-800 backdrop-blur rounded-2xl p-6 shadow-lg hover:shadow-2xl transition shadow-amber-300"
               >
-                {/* side bar */}
-                <span className="absolute left-0 top-0 h-full w-2 bg-indigo-500 rounded-l-xl"></span>
+                <motion.div
+                  initial={{ opacity: 0, x: 40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 }}
+                  whileHover={{ y: -6 }}
+                  className="relative bg-white/70 dark:bg-slate-800 backdrop-blur rounded-2xl p-6 shadow-lg hover:shadow-2xl transition shadow-violet-500"
+                >
+                  {/* side bar */}
+                  <span className="absolute left-0 top-0 h-full w-2 bg-indigo-500 rounded-l-xl"></span>
 
-                <div className="flex justify-between items-center">
-                  {/* SSC */}
-                  <h3 className="text-xl font-semibold">{item.degree}</h3>
+                  <div className="flex justify-between items-center">
+                    {/* SSC */}
+                    <motion.h2
+                      initial={{ opacity: 0, x: 300 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.3, duration: 0.5 }}
+                    >
+                      <h3 className="text-xl font-semibold">{item.degree}</h3>
+                    </motion.h2>
 
-                  {/* gpa */}
-                  <span className=" bg-blue-200 text-black px-3 py-1 rounded-full font-bold">
-                    GPA {item.GPA}
-                  </span>
-                </div>
+                    {/* gpa */}
+                    <span className=" bg-blue-200 text-black px-3 py-1 rounded-full font-bold">
+                      GPA {item.GPA}
+                    </span>
+                  </div>
 
-                <p className="text-indigo-400 mt-1 font-bold">
-                  {item.institute}
-                </p>
+                  <p className="text-indigo-400 mt-1 font-bold">
+                    {item.institute}
+                  </p>
 
-                <div className="flex justify-between text-sm text-gray-200 mt-3">
-                  <span>{item.group}</span>
-                  <span>{item.year}</span>
-                </div>
-              </motion.div>
+                  <div className="flex justify-between text-sm text-gray-200 mt-3">
+                    <span>{item.group}</span>
+                    <span>{item.year}</span>
+                  </div>
+                </motion.div>
+              </motion.h2>
             </Tilt>
           ))}
         </div>

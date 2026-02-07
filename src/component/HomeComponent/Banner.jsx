@@ -167,7 +167,7 @@ const Banner = () => {
           </div>
           <div className="stat">
             <div className="stat-title">GitHub Repos</div>
-            <div className="stat-value text-green-500">80+</div>
+            <div className="stat-value text-green-500">56+</div>
             <div className="stat-desc">Public Projects</div>
           </div>
         </div>
