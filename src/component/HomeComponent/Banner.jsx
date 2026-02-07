@@ -64,7 +64,7 @@ const Banner = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.1, delay: 0.3 }}
         >
-          Frontend / MERN Stack Developer
+          Frontend Developer | MERN Stack Learner
         </motion.h1>
 
         {/* Description */}

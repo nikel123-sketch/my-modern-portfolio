@@ -61,13 +61,13 @@ const Overview = () => {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl "
             >
-              Frontend / MERN Stack Developer
+              Frontend Developer | MERN Stack Learner
             </motion.h2>
 
             <div className="shadow-xl shadow-purple-600 rounded-4xl ">
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed bg-green-600/10 p-4 rounded-xl transition hover:bg-green-900/20  ">
-                Hello! I’m MD NIKEL ALI, a passionate Frontend / MERN Stack
-                Developer with a strong focus on React.js. I create clean,
+                Hello! I’m MD NIKEL ALI, a passionate Frontend Developer | MERN
+                Stack Learner with a strong focus on React.js. I create clean,
                 modern, and responsive web applications with an emphasis on
                 UI/UX design. I have hands-on experience in Frontend & Backend
                 development, including React, TailwindCSS, JavaScript, Node.js,
