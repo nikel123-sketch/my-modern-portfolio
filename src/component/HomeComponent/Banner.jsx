@@ -64,7 +64,7 @@ const Banner = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.1, delay: 0.3 }}
         >
-          MERN Stack Developer | React.js Expert
+          Frontend / MERN Stack Developer
         </motion.h1>
 
         {/* Description */}
@@ -156,7 +156,7 @@ const Banner = () => {
         <div className=" stats stats-horizontal sm:stats-horizontal  lg:stats-vertical shadow   ">
           <div className="stat">
             <div className="stat-title">Total Projects</div>
-            <div className="stat-value text-blue-600">1+</div>
+            <div className="stat-value text-blue-600">7+</div>
             <div className="stat-desc">Completed</div>
           </div>
 

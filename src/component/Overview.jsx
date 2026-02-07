@@ -7,7 +7,6 @@ const Overview = () => {
     return (
       <div className="bg-black">
         <div className="flex flex-col md:flex-row gap-6 md:gap-10 p-4 md:p-16 justify-center md:justify-between items-center overflow-hidden ">
-
           {/* Left Image */}
           <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20">
             <motion.div
@@ -62,20 +61,19 @@ const Overview = () => {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl "
             >
-              MERN Stack Developer | React.js Expert
+              Frontend / MERN Stack Developer
             </motion.h2>
 
             <div className="shadow-xl shadow-purple-600 rounded-4xl ">
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed bg-green-600/10 p-4 rounded-xl transition hover:bg-green-900/20  ">
-                Hello! I’m a passionate MERN stack developer with a strong focus
-                on React.js. I specialize in building clean, modern, and
-                responsive web applications. I’m always exploring new
-                technologies and adapting innovative tools to enhance my skills
-                and deliver impactful projects. I have hands-on experience in
-                Frontend & Backend development, UI/UX Design, Firebase, Node.js,
-                MongoDB, VS Code, and Figma. I am continuously exploring Next.js
-                and other modern frameworks to expand my expertise and stay
-                up-to-date in the web development world.
+                Hello! I’m MD NIKEL ALI, a passionate Frontend / MERN Stack
+                Developer with a strong focus on React.js. I create clean,
+                modern, and responsive web applications with an emphasis on
+                UI/UX design. I have hands-on experience in Frontend & Backend
+                development, including React, TailwindCSS, JavaScript, Node.js,
+                MongoDB, Firebase, VS Code, and Figma. I continuously explore
+                new technologies and frameworks like Next.js to enhance my
+                skills and deliver impactful, user-friendly projects.
               </p>
             </div>
 
