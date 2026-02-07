@@ -1,5 +1,5 @@
 # My React Portfolio
-- Live URL: [https://your-portfolio.vercel.app](https://your-portfolio.vercel.app) 
+- Live URL: [https://my-profasonal-protfolio.vercel.app] 
 This is my personal portfolio built with **React + Vite**, showcasing my projects, skills, and experience as a **Full-Stack / MERN Developer**.  
 
 It uses **TailwindCSS**, **Framer Motion**, and modern React practices to create a responsive, high-performance, and interactive web experience.
