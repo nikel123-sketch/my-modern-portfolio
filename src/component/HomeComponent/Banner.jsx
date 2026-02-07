@@ -14,7 +14,7 @@ const icons = [
     link: "https://www.facebook.com/nowsad.hossan.nikil.rubel",
   },
   { icon: whatsapp, link: "" },
-  { icon: linkdin, link: "" },
+  { icon: linkdin, link: "https://www.linkedin.com/in/md-nikel-ali-34731a3ab" },
   { icon: githup, link: "https://github.com/nikel123-sketch" },
   { icon: email, link: "mailto:webdevelopernikel@gmail.com" },
 ];
