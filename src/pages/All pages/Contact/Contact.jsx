@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 const Contact = () => {
   const handleEmailClick = () => {
     const email = "webdevelopernikel@gmail.com";
-    const subject = "Hello";
-    const body = "I want to contact you";
+    const subject = "Project Inquiry";
+    const body = "Hi Nikel,\n\nI would like to discuss a project with you.";
 
     window.location.href = `mailto:${email}?subject=${encodeURIComponent(
       subject,
@@ -37,71 +37,74 @@ const Contact = () => {
   ];
 
   return (
-    <div className="py-16 px-4 sm:px-6 md:px-8 bg-black">
+    <section className="py-24 px-4 bg-black">
+      {/* Heading */}
       <motion.div
-        className="text-center text-white max-w-3xl mx-auto mb-12"
+        className="text-center text-white max-w-3xl mx-auto mb-16"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
       >
-        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-wide mb-4 animate-bounce">
-          GET IN TOUCH 🔭
-        </h2>
+        <motion.h2
+          initial={{ opacity: 0, x: 300 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+        >
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            Get In Touch
+          </h2>
+        </motion.h2>
 
-        <p className="text-gray-300 text-lg sm:text-[18px] font-bold leading-relaxed">
-          Have a question, feedback, or just want to say hello? I'd love to hear
-          from you!
-          <br />
-          Reach out using the contact info below—I'll reply as soon as possible.
+        <p className="text-gray-400 leading-relaxed">
+          Have a project in mind or just want to say hello? Feel free to reach
+          out — I’m always open to new opportunities and collaborations.
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 max-w-5xl mx-auto">
+      {/* Contact Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
         {contacts.map((item, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.55, delay: index * 0.08 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
           >
             {item.link ? (
               <motion.a
                 href={item.link}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 border border-cyan-400 text-white py-4 rounded-2xl 
-                hover:bg-cyan-900/40 transition px-6 justify-center shadow-sm backdrop-blur-sm cursor-pointer"
+                className="flex items-center gap-3 border border-cyan-500/30 text-white py-4 rounded-xl 
+                hover:bg-cyan-500/10 transition px-6 justify-center backdrop-blur-md"
                 whileHover={{
-                  scale: 1.07,
-                  boxShadow: "0px 8px 22px rgba(0,255,255,0.3)",
+                  scale: 1.04,
+                  boxShadow: "0px 6px 20px rgba(0,255,255,0.25)",
                 }}
-                whileTap={{ scale: 0.95 }}
+                whileTap={{ scale: 0.97 }}
               >
                 {item.icon}
-                <span className="text-lg font-medium">{item.name}</span>
+                <span className="font-medium">{item.name}</span>
               </motion.a>
             ) : (
               <motion.button
-                type="button"
                 onClick={item.action}
-                className="w-full flex items-center gap-3 border border-cyan-400 text-white py-4 rounded-2xl 
-                hover:bg-cyan-900/40 transition px-6 justify-center shadow-sm backdrop-blur-sm cursor-pointer"
+                className="w-full flex items-center gap-3 border border-cyan-500/30 text-white py-4 rounded-xl 
+                hover:bg-cyan-500/10 transition px-6 justify-center backdrop-blur-md"
                 whileHover={{
-                  scale: 1.07,
-                  boxShadow: "0px 8px 22px rgba(0,255,255,0.3)",
+                  scale: 1.04,
+                  boxShadow: "0px 6px 20px rgba(0,255,255,0.25)",
                 }}
-                whileTap={{ scale: 0.95 }}
+                whileTap={{ scale: 0.97 }}
               >
                 {item.icon}
-                <span className="text-lg font-medium">{item.name}</span>
+                <span className="font-medium">{item.name}</span>
               </motion.button>
             )}
           </motion.div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

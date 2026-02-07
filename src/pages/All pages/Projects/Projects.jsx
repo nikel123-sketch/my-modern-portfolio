@@ -49,7 +49,7 @@ const cardVariants = {
 
 const Projects = () => {
   return (
-    <section className="py-2 px-4 bg-gray-950 text-white">
+    <section className="py-2 px-4 bg-black text-white">
       {/* Heading */}     
       <motion.h2
         className="text-4xl animate-bounce sm:text-5xl font-extrabold text-center mb-1 border-b-2 border-cyan-900 pb-2 "

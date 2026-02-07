@@ -1,6 +1,6 @@
 import { FiDownload } from "react-icons/fi";
 import { Link, NavLink } from "react-router";
-
+import { motion } from "framer-motion";
 
 const Navber = () => {
 
@@ -40,7 +40,6 @@ const Navber = () => {
     <div className="">
       {/* start */}
       <div className="navbar ">
-
         {/* Mobile menu */}
         <div className="navbar-start">
           {/* deopdown */}
@@ -72,9 +71,20 @@ const Navber = () => {
           </div>
 
           {/* my name */}
-          <a className="btn btn-ghost text-2xl font-bold text-blue-600 ">
-            Md Nikel Ali
-          </a>
+          <NavLink to="/">
+            <motion.span
+              initial={{ opacity: 0, x: -300 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              whileHover={{
+                scale: 1.05,
+                textShadow: "0px 0px 12px rgba(59,130,246,0.7)",
+              }}
+              className="btn btn-ghost text-2xl font-bold text-blue-600 cursor-pointer"
+            >
+              Md Nikel Ali
+            </motion.span>
+          </NavLink>
         </div>
 
         {/* Desktop menu */}
@@ -89,8 +99,6 @@ const Navber = () => {
             Download CV
           </a>
         </div>
-
-        
       </div>
     </div>
   );
