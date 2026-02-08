@@ -11,7 +11,7 @@ import { FiDownload } from "react-icons/fi";
 const icons = [
   {
     icon: facebook,
-    link: "https://www.facebook.com/nowsad.hossan.nikil.rubel",
+    link: "https://www.facebook.com/profile.php?id=61585944509199",
   },
   { icon: whatsapp, link: "" },
   { icon: linkdin, link: "https://www.linkedin.com/in/md-nikel-ali-34731a3ab" },
@@ -86,11 +86,11 @@ const Banner = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           {icons.map((item, index) => (
-            <a
+            <Link
               key={index}
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
+              to={item.link}
+              // target="_blank"
+              // rel="noopener noreferrer"
               aria-label={`Link to ${item.link}`}
             >
               <motion.img
@@ -100,7 +100,7 @@ const Banner = () => {
                 whileHover={{ scale: 1.2, rotate: 10 }}
                 transition={{ type: "spring", stiffness: 300 }}
               />
-            </a>
+            </Link>
           ))}
         </motion.div>
 
@@ -108,7 +108,8 @@ const Banner = () => {
         <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center sm:justify-start">
           {/* Download CV */}
           <motion.a
-            href="/path-to-your-cv.pdf"
+            href="https://drive.google.com/uc?export=download&id=1slYcaW8VLtPtziyndU7BVNepSEAZN3w6
+            "
             download
             className="bg-blue-600 text-white px-5 py-3 rounded-lg shadow-lg font-medium text-sm sm:text-base flex items-center justify-center gap-2 transition-all duration-300 hover:bg-blue-700 hover:shadow-xl"
             whileHover={{ scale: 1.05 }}
