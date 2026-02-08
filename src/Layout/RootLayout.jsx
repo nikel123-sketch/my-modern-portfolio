@@ -5,7 +5,7 @@ import Footer from '../pages/Footer/Footer';
 
 const RootLayout = () => {
     return (
-      <div className="bg-slate-900 min-h-screen flex flex-col text-slate-100 ">
+      <div className="bg-slate-900 min-h-screen  ">
         <Navber></Navber>
         <Outlet></Outlet>
         <Footer></Footer>

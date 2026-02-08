@@ -146,16 +146,16 @@ const MySkills = () => {
               }}
             >
               {/* title name */}
-              <motion.h2
+              <motion.h4
                 initial={{ opacity: 0, x: 300 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
                 className="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl "
               >
-                <h3 className="text-2xl font-semibold mb-4">
+                <p className="text-2xl font-semibold mb-4">
                   {category.title}
-                </h3>
-              </motion.h2>
+                </p>
+              </motion.h4>
 
               <motion.h2
                 initial={{ opacity: 0, x: -300 }}

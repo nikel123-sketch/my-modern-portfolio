@@ -92,9 +92,9 @@ const Projects = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.3, duration: 0.5 }}
                     >
-                      <h3 className="text-2xl font-semibold mb-2 group-hover:text-cyan-400 transition">
+                      <p className="text-2xl font-semibold mb-2 group-hover:text-cyan-400 transition">
                         {project.name}
-                      </h3>
+                      </p>
                     </motion.h2>
 
                     <p className="text-gray-100 text-sm mb-4">

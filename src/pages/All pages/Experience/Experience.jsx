@@ -57,9 +57,9 @@ const Experience = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            <h2 className="text-3xl font-bold flex items-center gap-3">
+            <p className="text-3xl font-bold flex items-center gap-3">
               <FaBriefcase className="text-indigo-500" /> Experience
-            </h2>
+            </p>
           </motion.h2>
 
           {experiences.map((item, index) => (
@@ -93,7 +93,7 @@ const Experience = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3, duration: 0.6 }}
                   >
-                    <h3 className="text-xl font-semibold">{item.role}</h3>
+                    <p className="text-xl font-semibold">{item.role}</p>
                   </motion.h2>
 
                   {/* freelance and date */}
@@ -120,9 +120,9 @@ const Experience = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            <h2 className="text-3xl font-bold flex items-center gap-3">
+            <p className="text-3xl font-bold flex items-center gap-3">
               <FaGraduationCap className="text-indigo-500" /> Education
-            </h2>
+            </p>
           </motion.h2>
 
           {education.map((item, index) => (
@@ -157,7 +157,7 @@ const Experience = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.3, duration: 0.5 }}
                     >
-                      <h3 className="text-xl font-semibold">{item.degree}</h3>
+                      <p className="text-xl font-semibold">{item.degree}</p>
                     </motion.h2>
 
                     {/* gpa */}

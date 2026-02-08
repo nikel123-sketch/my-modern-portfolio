@@ -189,7 +189,7 @@ const Banner = () => {
         whileHover={{
           scale: 1.05,
           rotate: 0, // subtle tilt effect
-          y: -5, // slight lift
+          y: 5, // slight lift
           transition: { type: "spring", stiffness: 100, damping: 10 },
         }}
         whileTap={{ scale: 0.95 }}
@@ -201,7 +201,7 @@ const Banner = () => {
           initial={{ y: -10 }}
           animate={{ y: [0, 0, 10] }} // subtle floating animation
           transition={{
-            duration: 4,
+            duration: 1,
             repeat: Infinity,
             repeatType: "mirror",
             ease: "easeInOut",
