@@ -21,21 +21,10 @@ const Contact = () => {
     setFormData({ name: "", email: "", phone: "", comment: "" });
   };
 
-  const handleEmailClick = () => {
-    const email = "webdevelopernikel@gmail.com";
-    const subject = "Project Inquiry";
-    const body = "Hi Nikel,\n\nI would like to discuss a project with you.";
-    window.location.href = `mailto:${email}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-  };
+ 
 
   const contacts = [
-    {
-      name: "Email",
-      icon: <Mail size={22} className="text-[#EA4335]" />,
-      action: handleEmailClick,
-    },
+    
     {
       name: "Phone",
       icon: <Phone size={22} className="text-gray-300" />,

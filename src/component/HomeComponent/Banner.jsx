@@ -13,10 +13,10 @@ const icons = [
     icon: facebook,
     link: "https://www.facebook.com/profile.php?id=61585944509199",
   },
-  { icon: whatsapp, link: "" },
-  { icon: linkdin, link: "https://www.linkedin.com/in/md-nikel-ali-34731a3ab" },
+  // { icon: whatsapp, link: "" },
+  // { icon: linkdin, link: "https://www.linkedin.com/in/md-nikel-ali-34731a3ab" },
   { icon: githup, link: "https://github.com/nikel123-sketch" },
-  { icon: email, link: "mailto:webdevelopernikel@gmail.com" },
+  // { icon: email, link: "mailto:webdevelopernikel@gmail.com" },
 ];
 
 const Banner = () => {
