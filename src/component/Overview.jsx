@@ -30,9 +30,9 @@ const Overview = () => {
                   <motion.img
                     src="https://i.ibb.co/MyZL6c1n/bannrer-img.jpg"
                     alt="Banner"
-                    className="max-w-[90%] sm:max-w-[400px] md:max-w-[450px] lg:max-w-[400px] rounded-4xl shadow-xl shadow-purple-600  "
+                    className="sm:max-w-[400px] md:max-w-[450px] lg:max-w-[400px] rounded-4xl shadow-xl shadow-purple-600  "
                     initial={{ y: -10 }}
-                    animate={{ y: [0, 0, 10] }} // subtle floating animation
+                    animate={{ y: [0, 0, 10] }} 
                     transition={{
                       duration: 4,
                       repeat: Infinity,

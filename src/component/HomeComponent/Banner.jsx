@@ -49,7 +49,7 @@ const Banner = () => {
           className="mb-3 font-extrabold text-3xl sm:text-4xl md:text-5xl
                bg-gradient-to-r from-purple-300 via-indigo-300 to-pink-300
                text-transparent bg-clip-text tracking-wide uppercase
-               whitespace-nowrap transition-transform duration-500 hover:scale-105"
+               transition-transform duration-500 hover:scale-105"
           initial={{ opacity: 0, x: 300 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.1, delay: 0.2 }}
