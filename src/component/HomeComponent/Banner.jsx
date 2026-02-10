@@ -1,10 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import facebook from "../../assets/facebook.png";
-import whatsapp from "../../assets/whatsapp.png";
-import linkdin from "../../assets/linkedin.png";
 import githup from "../../assets/github.png";
-import email from "../../assets/email.png";
 import { Link } from "react-router";
 import { FiDownload } from "react-icons/fi";
 

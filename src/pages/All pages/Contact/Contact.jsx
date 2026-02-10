@@ -1,28 +1,24 @@
 import React, { useState } from "react";
 import { Facebook, Github, Phone, Mail } from "lucide-react";
 import { motion } from "framer-motion";
+import { useForm } from "react-hook-form";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    comment: "",
-  });
+  const [data,setdata]=useState();
+  // console.log(data)
+  const {
+    register,
+    handleSubmit,
+    
+    formState: { errors },
+  } = useForm();
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const handleform = (data) => {
+    // console.log(data);
+    setdata(data)
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-    alert("Form submitted successfully!");
-    setFormData({ name: "", email: "", phone: "", comment: "" });
-  };
-
- 
-
+  
   const contacts = [
     
     {
@@ -103,90 +99,118 @@ const Contact = () => {
         ))}
       </div>
 
-      <motion.div
-        className="max-w-md mx-auto bg-gray-900 bg-opacity-80 backdrop-blur-xl shadow-2xl rounded-3xl p-8 border border-gray-700 hover:shadow-3xl transition-shadow duration-300"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+      {/* form */}
+      <form
+        onSubmit={handleSubmit(handleform)}
+        className="max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto
+             bg-gradient-to-br from-green-900/90 via-red-300-800/80 to-red-100/9
+             backdrop-blur-xl border border-white/10
+             p-6 sm:p-8 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.4)]
+             space-y-5"
       >
-        <h2 className="text-3xl font-bold mb-6 text-center text-white">
-          Send a Message
+        <h2 className="text-center text-xl sm:text-2xl font-bold text-white tracking-wide">
+          Contact Us
         </h2>
-        <form className="space-y-5" onSubmit={handleSubmit}>
-          {/* Name */}
-          <div className="relative">
-            <label className="absolute left-4 top-2 text-gray-400 text-sm peer-placeholder-shown:top-5 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-purple-400 peer-focus:text-sm transition-all">
-              Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              placeholder=" "
-              className="peer w-full border border-gray-700 rounded-xl px-4 pt-5 pb-2 bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
-            />
-          </div>
 
-          {/* Email */}
-          <div className="relative">
-            <label className="absolute left-4 top-2 text-gray-400 text-sm peer-placeholder-shown:top-5 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-purple-400 peer-focus:text-sm transition-all">
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              placeholder=" "
-              className="peer w-full border border-gray-700 rounded-xl px-4 pt-5 pb-2 bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
-            />
-          </div>
+        {/* Name */}
+        <div className="space-y-1">
+          <label className="text-sm sm:text-base text-white/80 font-medium">
+            Full Name
+          </label>
+          <input
+            type="text"
+            placeholder="John Doe"
+            className="w-full px-4 py-3 sm:py-3.5 rounded-xl 
+                 bg-white/10 text-white placeholder-white/40 
+                 border border-white/20 focus:border-blue-500 
+                 focus:ring-2 focus:ring-blue-500/40 
+                 transition-all duration-200"
+            {...register("name", { required: "Name is required" })}
+          />
+          {errors.name && (
+            <p className="text-red-400 text-xs sm:text-sm">
+              {errors.name.message}
+            </p>
+          )}
+        </div>
 
-          {/* Phone */}
-          <div className="relative">
-            <label className="absolute left-4 top-2 text-gray-400 text-sm peer-placeholder-shown:top-5 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-purple-400 peer-focus:text-sm transition-all">
-              Phone Number
-            </label>
-            <input
-              type="tel"
-              name="phone" // ✅ small-letter must match state
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              placeholder=" "
-              className="peer w-full border border-gray-700 rounded-xl px-4 pt-5 pb-2 bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
-            />
-          </div>
+        {/* Email */}
+        <div className="space-y-1">
+          <label className="text-sm sm:text-base text-white/80 font-medium">
+            Email Address
+          </label>
+          <input
+            type="email"
+            placeholder="example@email.com"
+            className="w-full px-4 py-3 sm:py-3.5 rounded-xl 
+                 bg-white/10 text-white placeholder-white/40 
+                 border border-white/20 focus:border-indigo-500 
+                 focus:ring-2 focus:ring-indigo-500/40 
+                 transition-all duration-200"
+            {...register("email", { required: "Email is required" })}
+          />
+          {errors.email && (
+            <p className="text-red-400 text-xs sm:text-sm">
+              {errors.email.message}
+            </p>
+          )}
+        </div>
 
-          {/* Comment */}
-          <div className="relative">
-            <label className="absolute left-4 top-2 text-gray-400 text-sm peer-placeholder-shown:top-5 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-purple-400 peer-focus:text-sm transition-all">
-              Comment
-            </label>
-            <textarea
-              name="comment"
-              value={formData.comment}
-              onChange={handleChange}
-              required
-              placeholder=" "
-              rows={5}
-              className="peer w-full border border-gray-700 rounded-xl px-4 pt-5 pb-2 bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition resize-none"
-            />
-          </div>
+        {/* Phone */}
+        <div className="space-y-1">
+          <label className="text-sm sm:text-base text-white/80 font-medium">
+            Phone Number
+          </label>
+          <input
+            type="tel"
+            placeholder="+880 1XXXXXXXXX"
+            className="w-full px-4 py-3 sm:py-3.5 rounded-xl 
+                 bg-white/10 text-white placeholder-white/40 
+                 border border-white/20 focus:border-emerald-500 
+                 focus:ring-2 focus:ring-emerald-500/40 
+                 transition-all duration-200"
+            {...register("phone", { required: "Phone is required" })}
+          />
+          {errors.phone && (
+            <p className="text-red-400 text-xs sm:text-sm">
+              {errors.phone.message}
+            </p>
+          )}
+        </div>
 
-          {/* Submit Button */}
-          <motion.button
-            type="submit"
-            className="w-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-semibold py-3 rounded-xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105"
-            whileTap={{ scale: 0.95 }}
-          >
-            Send Message
-          </motion.button>
-        </form>
-      </motion.div>
+        {/* Comment */}
+        <div className="space-y-1">
+          <label className="text-sm sm:text-base text-white/80 font-medium">
+            Message
+          </label>
+          <textarea
+            rows="4"
+            placeholder="Write your message here..."
+            className="w-full px-4 py-3 sm:py-3.5 rounded-xl 
+                 bg-white/10 text-white placeholder-white/40 
+                 border border-white/20 focus:border-purple-500 
+                 focus:ring-2 focus:ring-purple-500/40 
+                 transition-all duration-200 resize-none"
+            {...register("comment", { required: "Comment is required" })}
+          ></textarea>
+          {errors.comment && (
+            <p className="text-red-400 text-xs sm:text-sm">
+              {errors.comment.message}
+            </p>
+          )}
+        </div>
+
+        {/* Button */}
+        <button
+          type="submit"
+          className="w-full py-3 sm:py-3.5 rounded-xl font-semibold text-white 
+               bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 
+               hover:scale-[1.02] hover:shadow-xl 
+               active:scale-95 transition-all duration-200"
+        >
+          Send Message 🚀
+        </button>
+      </form>
     </section>
   );
 };
