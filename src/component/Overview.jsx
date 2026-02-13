@@ -48,7 +48,7 @@ const Overview = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full lg:w-1/2 bg-white dark:bg-slate-800/60 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl mt-6"
+            className="w-full lg:w-1/2  dark:bg-slate-800/60 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl mt-6"
           >
             {/* Animated Title */}
             <motion.h1

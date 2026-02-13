@@ -26,7 +26,7 @@ const Banner = () => {
     <div className="flex flex-col-reverse md:flex-row gap-6 md:gap-10 p-4 md:p-5 justify-center md:justify-between items-center overflow-hidden bg-black">
       {/* Right - My Details */}
       <motion.div
-        className="text-left dark:bg-slate-900/70 bg-white/20 backdrop-blur-md rounded-xl p-6 w-full md:w-1/2 shadow-lg shadow-violet-500"
+        className="text-left dark:bg-slate-900/70  backdrop-blur-md rounded-xl p-6 w-full md:w-1/2 shadow-lg shadow-violet-500"
         initial={{ opacity: 0, y: -200, scale: 1 }}
         whileInView={{ opacity: 1, y: 10, scale: 1 }}
         whileHover={{ scale: 1.03, y: 5 }}
