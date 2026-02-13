@@ -90,9 +90,8 @@ const MySkills = () => {
       ],
     },
   ];
-  
 
-  // Motion variants
+  // Motion Variants
   const containerVariants = {
     hidden: {},
     visible: {
@@ -103,7 +102,7 @@ const MySkills = () => {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
       y: 0,
@@ -112,15 +111,18 @@ const MySkills = () => {
   };
 
   const skillVariants = {
-    hidden: { opacity: 0, y: 10 },
+    hidden: { opacity: 0, y: 15 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
   };
 
   return (
-    <section id="skills" className="py-6 bg-black text-white px-6 md:px-16">
-      {/* title */}
+    <section
+      id="skills"
+      className="py-16 bg-black text-white px-6 md:px-16 overflow-x-hidden"
+    >
+      {/* Title */}
       <motion.h2
-        className="text-4xl animate-bounce sm:text-5xl font-extrabold text-center mb-12 border-b-2 border-cyan-900 pb-2 "
+        className="text-4xl sm:text-5xl font-extrabold text-center mb-12 border-b-2 border-cyan-900 pb-2"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -128,62 +130,58 @@ const MySkills = () => {
       >
         My Skills
       </motion.h2>
-      
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {skillCategories.map((category, idx) => (
-            <motion.div
-              key={idx}
-              className="bg-black/90 border border-cyan-500 rounded-xl p-6 shadow-lg"
-              variants={cardVariants}
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0px 10px 30px rgba(0,255,255,0.4)",
-              }}
-            >
-              {/* title name */}
-              <motion.h4
-                initial={{ opacity: 0, x: 300 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-                className="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl "
-              >
-                <p className="text-2xl font-semibold mb-4">
-                  {category.title}
-                </p>
-              </motion.h4>
 
-              <motion.h2
-                initial={{ opacity: 0, x: -300 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-              >
-                <div className="flex flex-wrap gap-3">
-                  {category.skills.map((skill, i) => (
-                    <motion.div
-                      key={i}
-                      className="flex items-center gap-2 bg-cyan-700/20 px-3 py-2 rounded-full hover:bg-cyan-700 transition-colors duration-300"
-                      variants={skillVariants}
-                    >
-                      {skill.icon}
-                      <span className="text-white font-medium">
-                        {skill.name}
-                      </span>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.h2>
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 overflow-hidden"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        {skillCategories.map((category, idx) => (
+          <motion.div
+            key={idx}
+            className="bg-black/90 border border-cyan-500 rounded-2xl p-6 shadow-lg overflow-hidden transition-all duration-300"
+            variants={cardVariants}
+            whileHover={{
+              scale: 1.02,
+              boxShadow: "0px 10px 30px rgba(0,255,255,0.3)",
+            }}
+          >
+            {/* Category Title */}
+            <motion.h4
+              className="text-2xl font-semibold mb-6"
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              {category.title}
+            </motion.h4>
+
+            {/* Skills */}
+            <motion.div
+              className="flex flex-wrap gap-3"
+              variants={containerVariants}
+            >
+              {category.skills.map((skill, i) => (
+                <motion.div
+                  key={i}
+                  className="flex items-center gap-2 bg-cyan-700/20 px-4 py-2 rounded-full hover:bg-cyan-700 transition-colors duration-300"
+                  variants={skillVariants}
+                >
+                  {skill.icon}
+                  <span className="text-white font-medium break-words">
+                    {skill.name}
+                  </span>
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
-        </motion.div>
-      
+          </motion.div>
+        ))}
+      </motion.div>
     </section>
   );
 };
 
 export default MySkills;
-

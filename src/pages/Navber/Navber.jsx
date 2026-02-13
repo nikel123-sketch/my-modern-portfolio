@@ -1,10 +1,12 @@
+import { useState } from "react";
 import { FiDownload } from "react-icons/fi";
-import { Link, NavLink } from "react-router";
-import { motion } from "framer-motion";
+import { NavLink } from "react-router";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Navber = () => {
+  const [open, setOpen] = useState(false);
 
-    // all links---
+  // all links---
   const links = [
     { name: "Home", path: "/" },
     { name: "About Me", path: "/About" },
@@ -14,68 +16,92 @@ const Navber = () => {
     { name: "Contact", path: "/Contact" },
   ];
 
-
-//   all links map and acctive added---
-
+  // render links
   const renderLinks = links.map((link, index) => (
-
-    
-    <li key={index}>
+    <motion.li
+      key={index}
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: index * 0.07 }}
+      onClick={() => setOpen(false)}
+    >
       <NavLink
         to={link.path}
         className={({ isActive }) =>
-          `px-4 py-2 rounded-md font-medium transition duration-300 ${
+          `px-4 py-2 rounded-lg font-medium block transition-all duration-300 ${
             isActive
-              ? "bg-blue-600 text-white shadow-lg"
+              ? "bg-blue-500 text-white font-bold"
               : "hover:bg-blue-100 hover:text-blue-600"
           }`
         }
       >
         {link.name}
       </NavLink>
-    </li>
+    </motion.li>
   ));
 
   return (
-    <div className="">
-      {/* start */}
-      <div className="navbar ">
+    <div>
+      <div className="navbar">
         {/* Mobile menu */}
         <div className="navbar-start">
-          {/* deopdown */}
-          <div className="dropdown">
-            <div tabIndex={0} className="btn btn-ghost lg:hidden p-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 "
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </div>
-
-            {/* mobile menu */}
-            <ul
-              tabIndex={-1}
-              className="menu menu-compact dropdown-content mt-3 p-3 shadow-lg rounded-lg"
+          {/* Premium Dropdown */}
+          <div className="relative lg:hidden">
+            {/* Animated Hamburger */}
+            <button
+              onClick={() => setOpen(!open)}
+              className="btn btn-ghost p-2"
             >
-              {renderLinks}
-            </ul>
+              <motion.div
+                animate={open ? "open" : "closed"}
+                className="w-6 h-6 flex flex-col justify-between"
+              >
+                <motion.span
+                  variants={{
+                    closed: { rotate: 0, y: 0 },
+                    open: { rotate: 45, y: 8 },
+                  }}
+                  className="h-0.5 w-full bg-current"
+                />
+                <motion.span
+                  variants={{
+                    closed: { opacity: 1 },
+                    open: { opacity: 0 },
+                  }}
+                  className="h-0.5 w-full bg-current"
+                />
+                <motion.span
+                  variants={{
+                    closed: { rotate: 0, y: 0 },
+                    open: { rotate: -45, y: -8 },
+                  }}
+                  className="h-0.5 w-full bg-current"
+                />
+              </motion.div>
+            </button>
+
+            {/* Animated Dropdown Menu */}
+            <AnimatePresence>
+              {open && (
+                <motion.ul
+                  initial={{ opacity: 0, y: -20, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                  transition={{ duration: 0.25 }}
+                  className="absolute top-7 left-0 mt-4 bg-neutral-900 backdrop-blur-xl border border-amber-300 rounded-2xl shadow-2xl p-4 space-y-2 z-50"
+                >
+                  {renderLinks}
+                </motion.ul>
+              )}
+            </AnimatePresence>
           </div>
 
-          {/* my name */}
+          {/* Name */}
           <NavLink to="/">
             <motion.span
               initial={{ opacity: 0, x: -300 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
+              transition={{ duration: 0.3 }}
               whileHover={{
                 scale: 1.05,
                 textShadow: "0px 0px 12px rgba(59,130,246,0.7)",
@@ -89,7 +115,24 @@ const Navber = () => {
 
         {/* Desktop menu */}
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 gap-2">{renderLinks}</ul>
+          <ul className="menu menu-horizontal px-1 gap-2">
+            {links.map((link, index) => (
+              <li key={index}>
+                <NavLink
+                  to={link.path}
+                  className={({ isActive }) =>
+                    `px-4 py-2 rounded-md font-medium transition ${
+                      isActive
+                        ? "bg-blue-500 text-white font-bold"
+                        : "hover:bg-blue-100 hover:text-blue-600"
+                    }`
+                  }
+                >
+                  {link.name}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Download CV */}

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
-import Tilt from "react-parallax-tilt"; // <-- added Tilt import
+import Tilt from "react-parallax-tilt";
 
 const Experience = () => {
   const experiences = [
@@ -37,10 +37,10 @@ const Experience = () => {
   ];
 
   return (
-    <section className="bg-black  px-4 sm:px-6 lg:px-8 p-6">
-      {/* Experience & Education */}
+    <section className="bg-black px-4 sm:px-6 lg:px-8 py-16 overflow-x-hidden">
+      {/* Title */}
       <motion.h2
-        className="text-4xl sm:text-5xl font-extrabold text-center mb-1 border-b-2 border-cyan-900  animate-bounce "
+        className="text-4xl sm:text-5xl font-extrabold text-center mb-16 border-b-2 border-cyan-900 pb-2"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -49,133 +49,93 @@ const Experience = () => {
         Experience & Education 💻
       </motion.h2>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 shadow-2xl   p-1 ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* EXPERIENCE */}
-        <div className="space-y-10 relative  shadow-2xl shadow-teal-400 p-6 rounded-3xl">
-          <motion.h2
-            initial={{ opacity: 0, x: -300 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-          >
-            <p className="text-3xl font-bold flex items-center gap-3">
-              <FaBriefcase className="text-indigo-500" /> Experience
-            </p>
-          </motion.h2>
+        <div className="space-y-8 p-6 rounded-3xl shadow-xl shadow-teal-500/20">
+          <h3 className="text-3xl font-bold flex items-center gap-3 text-white">
+            <FaBriefcase className="text-indigo-500" />
+            Experience
+          </h3>
 
           {experiences.map((item, index) => (
             <Tilt
               key={index}
-              tiltMaxAngleX={8}
-              tiltMaxAngleY={8}
-              scale={1.02}
+              tiltMaxAngleX={6}
+              tiltMaxAngleY={6}
+              scale={1.01}
               glareEnable={false}
             >
-              <motion.h2
-                initial={{ opacity: 0, x: -300 }}
+              <motion.div
+                initial={{ opacity: 0, x: -80 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3, duration: 0.0 }}
-                className="relative bg-white/70 dark:bg-slate-800 backdrop-blur rounded-2xl p-6 shadow-lg hover:shadow-2xl transition shadow-amber-300"
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="relative bg-white/10 backdrop-blur rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300"
               >
-                <motion.div
-                  initial={{ opacity: 0, x: -40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                  whileHover={{ y: -6 }}
-                  className="relative bg-white/70 dark:bg-slate-800 backdrop-blur rounded-2xl p-6 shadow-lg hover:shadow-2xl transition shadow-violet-500"
-                >
-                  {/* side bar */}
-                  <span className="absolute left-0 top-0 h-full w-2 bg-indigo-500 rounded-l-xl"></span>
+                <span className="absolute left-0 top-0 h-full w-2 bg-indigo-500 rounded-l-xl"></span>
 
-                  {/* Frontend Developer */}
-                  <motion.h2
-                    initial={{ opacity: 0, x: -300 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.3, duration: 0.6 }}
-                  >
-                    <p className="text-xl font-semibold">{item.role}</p>
-                  </motion.h2>
+                <h4 className="text-xl font-semibold text-white">
+                  {item.role}
+                </h4>
 
-                  {/* freelance and date */}
-                  <div className="flex justify-between text-md mt-1">
-                    <p className="text-indigo-400 font-bold">{item.company}</p>
-                    <span className="text-gray-100 font-bold">{item.time}</span>
-                  </div>
+                <div className="flex justify-between text-sm mt-1">
+                  <span className="text-indigo-400 font-bold">
+                    {item.company}
+                  </span>
+                  <span className="text-gray-300 font-bold">{item.time}</span>
+                </div>
 
-                  {/* des */}
-                  <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {item.desc}
-                  </p>
-                </motion.div>
-              </motion.h2>
+                <p className="mt-4 text-gray-300 leading-relaxed">
+                  {item.desc}
+                </p>
+              </motion.div>
             </Tilt>
           ))}
         </div>
 
         {/* EDUCATION */}
-        <div className="space-y-10 shadow-2xl shadow-teal-400 p-5 rounded-3xl">
-          {/* EDUCATION */}
-          <motion.h2
-            initial={{ opacity: 0, x: 300 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-          >
-            <p className="text-3xl font-bold flex items-center gap-3">
-              <FaGraduationCap className="text-indigo-500" /> Education
-            </p>
-          </motion.h2>
+        <div className="space-y-8 p-6 rounded-3xl shadow-xl shadow-teal-500/20">
+          <h3 className="text-3xl font-bold flex items-center gap-3 text-white">
+            <FaGraduationCap className="text-indigo-500" />
+            Education
+          </h3>
 
           {education.map((item, index) => (
             <Tilt
               key={index}
-              tiltMaxAngleX={8}
-              tiltMaxAngleY={8}
-              scale={1.02}
+              tiltMaxAngleX={6}
+              tiltMaxAngleY={6}
+              scale={1.01}
               glareEnable={false}
             >
-              <motion.h2
-                initial={{ opacity: 0, x: 300 }}
+              <motion.div
+                initial={{ opacity: 0, x: 80 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3, duration: 0.0 }}
-                className="relative bg-white/70 dark:bg-slate-800 backdrop-blur rounded-2xl p-6 shadow-lg hover:shadow-2xl transition shadow-amber-300"
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="relative bg-white/10 backdrop-blur rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300"
               >
-                <motion.div
-                  initial={{ opacity: 0, x: 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                  whileHover={{ y: -6 }}
-                  className="relative bg-white/70 dark:bg-slate-800 backdrop-blur rounded-2xl p-6 shadow-lg hover:shadow-2xl transition shadow-violet-500"
-                >
-                  {/* side bar */}
-                  <span className="absolute left-0 top-0 h-full w-2 bg-indigo-500 rounded-l-xl"></span>
+                <span className="absolute left-0 top-0 h-full w-2 bg-indigo-500 rounded-l-xl"></span>
 
-                  <div className="flex justify-between items-center">
-                    {/* SSC */}
-                    <motion.h2
-                      initial={{ opacity: 0, x: 300 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3, duration: 0.5 }}
-                    >
-                      <p className="text-xl font-semibold">{item.degree}</p>
-                    </motion.h2>
+                <div className="flex justify-between items-center">
+                  <h4 className="text-xl font-semibold text-white">
+                    {item.degree}
+                  </h4>
 
-                    {/* gpa */}
-                    <span className=" bg-blue-200 text-black px-3 py-1 rounded-full font-bold">
-                      GPA {item.GPA}
-                    </span>
-                  </div>
+                  <span className="bg-blue-400 text-black px-3 py-1 rounded-full font-bold text-sm">
+                    GPA {item.GPA}
+                  </span>
+                </div>
 
-                  <p className="text-indigo-400 mt-1 font-bold">
-                    {item.institute}
-                  </p>
+                <p className="text-indigo-400 mt-2 font-bold">
+                  {item.institute}
+                </p>
 
-                  <div className="flex justify-between text-sm text-gray-200 mt-3">
-                    <span>{item.group}</span>
-                    <span>{item.year}</span>
-                  </div>
-                </motion.div>
-              </motion.h2>
+                <div className="flex justify-between text-sm text-gray-300 mt-3">
+                  <span>{item.group}</span>
+                  <span>{item.year}</span>
+                </div>
+              </motion.div>
             </Tilt>
           ))}
         </div>
