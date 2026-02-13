@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FiDownload } from "react-icons/fi";
 import { NavLink } from "react-router";
 import { AnimatePresence, motion } from "framer-motion";
-
+import nikel from '../../assets/md nikel ali.jpg'
 const Navber = () => {
   const [open, setOpen] = useState(false);
 
@@ -108,7 +108,8 @@ const Navber = () => {
               }}
               className="btn btn-ghost text-2xl font-bold text-blue-600 cursor-pointer"
             >
-              Md Nikel Ali
+              <img className="rounded-full h-15" src={nikel} alt="" />
+              Protfolio
             </motion.span>
           </NavLink>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { motion } from "framer-motion";
-
+import Tilt from "react-parallax-tilt";
 const Overview = () => {
   
     return (
@@ -9,38 +9,38 @@ const Overview = () => {
         <div className="flex flex-col md:flex-row gap-6 md:gap-10 p-4 md:p-16 justify-center md:justify-between items-center overflow-hidden ">
           {/* Left Image */}
           <motion.div
-                  className="flex justify-center md:justify-start"
-                  initial={{ opacity: 0, y: 100, scale: 0.8 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 130,
-                    damping: 18,
-                    mass: 1,
-                    delay: 0.3,
-                  }}
-                  whileHover={{
-                    scale: 1.05,
-                    rotate: 0, // subtle tilt effect
-                    y: -5, // slight lift
-                    transition: { type: "spring", stiffness: 100, damping: 10 },
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <motion.img
-                    src="https://i.ibb.co/MyZL6c1n/bannrer-img.jpg"
-                    alt="Banner"
-                    className="sm:max-w-[400px] md:max-w-[450px] lg:max-w-[400px] rounded-4xl shadow-xl shadow-purple-600  "
-                    initial={{ y: -10 }}
-                    animate={{ y: [0, 0, 10] }} 
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      repeatType: "mirror",
-                      ease: "easeInOut",
-                    }}
-                  />
-                </motion.div>
+            className="flex justify-center md:justify-start"
+            initial={{ opacity: 0, y: 100, scale: 0.8 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 130,
+              damping: 18,
+              mass: 1,
+              delay: 0.3,
+            }}
+            whileHover={{
+              scale: 1.05,
+              rotate: 0, // subtle tilt effect
+              y: -5, // slight lift
+              transition: { type: "spring", stiffness: 100, damping: 10 },
+            }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <motion.img
+              src="https://i.ibb.co/MyZL6c1n/bannrer-img.jpg"
+              alt="Banner"
+              className="sm:max-w-[400px] md:max-w-[450px] lg:max-w-[400px] rounded-4xl shadow-xl shadow-purple-600  "
+              initial={{ y: -10 }}
+              animate={{ y: [0, 0, 10] }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                repeatType: "mirror",
+                ease: "easeInOut",
+              }}
+            />
+          </motion.div>
 
           {/* Right Content */}
           <motion.div
@@ -74,16 +74,19 @@ const Overview = () => {
             </motion.h2>
 
             <div className="shadow-xl shadow-purple-600 rounded-4xl ">
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed bg-green-600/10 p-4 rounded-xl transition hover:bg-green-900/20  ">
-                Hello! I’m MD NIKEL ALI, a passionate Frontend Developer | MERN
-                Stack Learner with a strong focus on React.js. I create clean,
-                modern, and responsive web applications with an emphasis on
-                UI/UX design. I have hands-on experience in Frontend & Backend
-                development, including React, TailwindCSS, JavaScript, Node.js,
-                MongoDB, Firebase, VS Code, and Figma. I continuously explore
-                new technologies and frameworks like Next.js to enhance my
-                skills and deliver impactful, user-friendly projects.
-              </p>
+              <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed bg-green-600/10 p-4 rounded-xl transition hover:bg-green-900/20  ">
+                  Hello! I’m MD NIKEL ALI, a passionate Frontend Developer |
+                  MERN Stack Learner with a strong focus on React.js. I create
+                  clean, modern, and responsive web applications with an
+                  emphasis on UI/UX design. I have hands-on experience in
+                  Frontend & Backend development, including React, TailwindCSS,
+                  JavaScript, Node.js, MongoDB, Firebase, VS Code, and Figma. I
+                  continuously explore new technologies and frameworks like
+                  Next.js to enhance my skills and deliver impactful,
+                  user-friendly projects.
+                </p>
+              </Tilt>
             </div>
 
             <Link to="/Contact">
