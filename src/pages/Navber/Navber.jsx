@@ -109,7 +109,7 @@ const Navber = () => {
               className="btn btn-ghost text-2xl font-bold text-blue-600 cursor-pointer"
             >
               <img className="rounded-full h-15" src={nikel} alt="" />
-              Protfolio
+              
             </motion.span>
           </NavLink>
         </div>

@@ -48,19 +48,20 @@ const Overview = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full lg:w-1/2  dark:bg-slate-800/60 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl mt-6"
+            whileHover={{ scale: 1.02 }}
+            className="w-full lg:w-1/2 dark:bg-slate-800/60 bg-white/20 backdrop-blur-md rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl shadow-purple-500/20 mt-6 border border-white/10"
           >
             {/* Animated Title */}
             <motion.h1
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="mb-4 font-extrabold text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-red-400 via-indigo-400 to-purple-500 text-transparent bg-clip-text animate-bounce"
+              className="mb-4 font-extrabold text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-red-400 via-indigo-400 to-purple-500 text-transparent bg-clip-text"
             >
               About Me
             </motion.h1>
 
-            <h3 className="font-bold  text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-1">
+            <h3 className="font-bold text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-1">
               I’m MD NIKEL ALI
             </h3>
 
@@ -68,14 +69,23 @@ const Overview = () => {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl "
+              className="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl"
             >
               Frontend Developer | MERN Stack Learner
             </motion.h2>
 
-            <div className="shadow-xl shadow-purple-600 rounded-4xl ">
-              <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed bg-green-600/10 p-4 rounded-xl transition hover:bg-green-900/20  ">
+            {/* Tilt Section */}
+            <div className="shadow-xl bg-black shadow-purple-600/30 rounded-3xl">
+              <Tilt
+                tiltMaxAngleX={10}
+                tiltMaxAngleY={10}
+                perspective={1000}
+                transitionSpeed={1000}
+                scale={1.03}
+                gyroscope={true}
+                className="rounded-3xl"
+              >
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed bg-green-600/10 p-5 rounded-3xl backdrop-blur-md border border-green-400/20 transition duration-500 hover:bg-green-900/20 hover:shadow-lg hover:shadow-green-500/30">
                   Hello! I’m MD NIKEL ALI, a passionate Frontend Developer |
                   MERN Stack Learner with a strong focus on React.js. I create
                   clean, modern, and responsive web applications with an
@@ -93,12 +103,12 @@ const Overview = () => {
               <motion.h2
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-                className="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl "
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl"
               >
                 <motion.button
-                  className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-xl shadow-lg font-medium"
-                  whileHover={{ scale: 1.05 }}
+                  className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl shadow-lg shadow-blue-500/40 font-medium transition duration-300"
+                  whileHover={{ scale: 1.08 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   Contact Me
