@@ -1,45 +1,87 @@
-import React, { useState } from "react";
-import { Facebook, Github, Phone, Mail } from "lucide-react";
+import React from "react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
+import { Facebook, Github, Phone, Mail, Youtube } from "lucide-react";
+import { FaTiktok } from "react-icons/fa";
 
 const Contact = () => {
-  const [data,setdata]=useState();
-  // console.log(data)
-  const {
-    register,
-    handleSubmit,
-    
-    formState: { errors },
-  } = useForm();
-
-
-  const handleform = (data) => {
-    // console.log(data);
-    setdata(data)
-  };
-  
   const contacts = [
-    
+    {
+      name: "Email",
+      icon: <Mail size={22} />,
+      link: "mailto:webdevelopernikel@gmail.com",
+    },
     {
       name: "Phone",
-      icon: <Phone size={22} className="text-gray-300" />,
+      icon: <Phone size={22} />,
       link: "tel:+8801331530219",
     },
     {
       name: "GitHub",
-      icon: <Github size={22} className="text-white" />,
+      icon: <Github size={22} />,
       link: "https://github.com/nikel123-sketch",
     },
     {
       name: "Facebook",
-      icon: <Facebook size={22} className="text-blue-500" />,
+      icon: <Facebook size={22} />,
       link: "https://www.facebook.com/nowsad.hossan.nikil.rubel",
+    },
+    {
+      name: "YouTube",
+      icon: <Youtube size={22} />,
+      link: "https://www.youtube.com/@CodeWithNowsad",
+    },
+    {
+      name: "TikTok",
+      icon: <FaTiktok size={22} />,
+      link: "https://www.tiktok.com/@code.with.nowsad",
     },
   ];
 
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const handleform = (data) => {
+    const message = `
+📩 New Portfolio Contact Message
+
+👤 Name: ${data.name}
+📧 Email: ${data.email}
+📱 Phone: ${data.phone}
+💬 Message: ${data.comment}
+    `;
+
+    const whatsappNumber = "8801331530219";
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      message,
+    )}`;
+
+    window.open(whatsappURL, "_blank");
+
+    toast.success("Message Ready on WhatsApp 🚀", {
+      style: {
+        background: "#111",
+        color: "#fff",
+        border: "1px solid #9333ea",
+      },
+      iconTheme: {
+        primary: "#9333ea",
+        secondary: "#fff",
+      },
+    });
+
+    reset();
+  };
+
   return (
     <section className="py-24 px-4 bg-black">
+      <Toaster position="top-right" reverseOrder={false} />
+
       {/* Heading */}
       <motion.div
         className="text-center text-white max-w-3xl mx-auto mb-16"
@@ -56,160 +98,142 @@ const Contact = () => {
         </p>
       </motion.div>
 
-      {/* Contact Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-16">
+      {/* Premium Contact Icons */}
+      <motion.div
+        className="max-w-6xl mx-auto mb-20 flex flex-wrap justify-center gap-6"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         {contacts.map((item, index) => (
-          <motion.div
+          <motion.a
             key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.15, rotate: 3 }}
+            className="group relative w-20 h-20 flex items-center justify-center"
           >
-            {item.link ? (
-              <motion.a
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 border border-cyan-500/30 text-white py-4 rounded-xl hover:bg-cyan-500/10 transition px-6 justify-center backdrop-blur-md"
-                whileHover={{
-                  scale: 1.04,
-                  boxShadow: "0px 6px 20px rgba(0,255,255,0.25)",
-                }}
-                whileTap={{ scale: 0.97 }}
-              >
-                {item.icon}
-                <span className="font-medium">{item.name}</span>
-              </motion.a>
-            ) : (
-              <motion.button
-                onClick={item.action}
-                className="w-full flex items-center gap-3 border border-cyan-500/30 text-white py-4 rounded-xl hover:bg-cyan-500/10 transition px-6 justify-center backdrop-blur-md"
-                whileHover={{
-                  scale: 1.04,
-                  boxShadow: "0px 6px 20px rgba(0,255,255,0.25)",
-                }}
-                whileTap={{ scale: 0.97 }}
-              >
-                {item.icon}
-                <span className="font-medium">{item.name}</span>
-              </motion.button>
-            )}
-          </motion.div>
-        ))}
-      </div>
+            <div
+              className="absolute inset-0 rounded-full p-[2px] 
+              bg-gradient-to-tr from-cyan-500 via-purple-500 to-pink-500 
+              animate-spin-slow"
+            >
+              <div className="w-full h-full bg-black rounded-full"></div>
+            </div>
 
-      {/* form */}
+            <div
+              className="relative z-10 w-16 h-16 flex items-center justify-center 
+              rounded-full bg-white/10 backdrop-blur-md 
+              text-white text-xl border border-white/20 
+              group-hover:bg-white/20 transition duration-300"
+            >
+              {item.icon}
+            </div>
+          </motion.a>
+        ))}
+      </motion.div>
+
+      {/* Form */}
       <form
         onSubmit={handleSubmit(handleform)}
-        className="max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto
-             bg-gradient-to-br from-green-900/90 via-red-300-800/80 to-red-100/9
-             backdrop-blur-xl border border-white/10
-             p-6 sm:p-8 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.4)]
-             space-y-5"
+        className="relative max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto
+        p-[2px] rounded-3xl 
+        bg-gradient-to-br from-cyan-500 via-purple-600 to-pink-500
+        shadow-[0_25px_80px_rgba(0,0,0,0.5)]"
       >
-        <h2 className="text-center text-xl sm:text-2xl font-bold text-white tracking-wide">
-          Contact Us
-        </h2>
-
-        {/* Name */}
-        <div className="space-y-1">
-          <label className="text-sm sm:text-base text-white/80 font-medium">
-            Full Name
-          </label>
-          <input
-            type="text"
-            placeholder="John Doe"
-            className="w-full px-4 py-3 sm:py-3.5 rounded-xl 
-                 bg-white/10 text-white placeholder-white/40 
-                 border border-white/20 focus:border-blue-500 
-                 focus:ring-2 focus:ring-blue-500/40 
-                 transition-all duration-200"
-            {...register("name", { required: "Name is required" })}
-          />
-          {errors.name && (
-            <p className="text-red-400 text-xs sm:text-sm">
-              {errors.name.message}
-            </p>
-          )}
-        </div>
-
-        {/* Email */}
-        <div className="space-y-1">
-          <label className="text-sm sm:text-base text-white/80 font-medium">
-            Email Address
-          </label>
-          <input
-            type="email"
-            placeholder="example@email.com"
-            className="w-full px-4 py-3 sm:py-3.5 rounded-xl 
-                 bg-white/10 text-white placeholder-white/40 
-                 border border-white/20 focus:border-indigo-500 
-                 focus:ring-2 focus:ring-indigo-500/40 
-                 transition-all duration-200"
-            {...register("email", { required: "Email is required" })}
-          />
-          {errors.email && (
-            <p className="text-red-400 text-xs sm:text-sm">
-              {errors.email.message}
-            </p>
-          )}
-        </div>
-
-        {/* Phone */}
-        <div className="space-y-1">
-          <label className="text-sm sm:text-base text-white/80 font-medium">
-            Phone Number
-          </label>
-          <input
-            type="tel"
-            placeholder="+880 1XXXXXXXXX"
-            className="w-full px-4 py-3 sm:py-3.5 rounded-xl 
-                 bg-white/10 text-white placeholder-white/40 
-                 border border-white/20 focus:border-emerald-500 
-                 focus:ring-2 focus:ring-emerald-500/40 
-                 transition-all duration-200"
-            {...register("phone", { required: "Phone is required" })}
-          />
-          {errors.phone && (
-            <p className="text-red-400 text-xs sm:text-sm">
-              {errors.phone.message}
-            </p>
-          )}
-        </div>
-
-        {/* Comment */}
-        <div className="space-y-1">
-          <label className="text-sm sm:text-base text-white/80 font-medium">
-            Message
-          </label>
-          <textarea
-            rows="4"
-            placeholder="Write your message here..."
-            className="w-full px-4 py-3 sm:py-3.5 rounded-xl 
-                 bg-white/10 text-white placeholder-white/40 
-                 border border-white/20 focus:border-purple-500 
-                 focus:ring-2 focus:ring-purple-500/40 
-                 transition-all duration-200 resize-none"
-            {...register("comment", { required: "Comment is required" })}
-          ></textarea>
-          {errors.comment && (
-            <p className="text-red-400 text-xs sm:text-sm">
-              {errors.comment.message}
-            </p>
-          )}
-        </div>
-
-        {/* Button */}
-        <button
-          type="submit"
-          className="w-full py-3 sm:py-3.5 rounded-xl font-semibold text-white 
-               bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 
-               hover:scale-[1.02] hover:shadow-xl 
-               active:scale-95 transition-all duration-200"
+        <div
+          className="bg-black/80 backdrop-blur-2xl rounded-3xl 
+        border border-white/10 p-6 sm:p-8 space-y-6"
         >
-          Send Message 🚀
-        </button>
+          <h2
+            className="text-center text-2xl sm:text-3xl font-bold 
+          bg-gradient-to-r from-cyan-400 to-purple-400 
+          bg-clip-text text-transparent tracking-wide"
+          >
+            Contact Me
+          </h2>
+
+          {/* Name */}
+          <div>
+            <input
+              type="text"
+              placeholder="Full Name"
+              className="w-full px-4 py-4 rounded-xl
+              bg-white/5 text-white border border-white/20 
+              focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/30
+              outline-none"
+              {...register("name", { required: "Name is required" })}
+            />
+            {errors.name && (
+              <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>
+            )}
+          </div>
+
+          {/* Email */}
+          <div>
+            <input
+              type="email"
+              placeholder="Email Address"
+              className="w-full px-4 py-4 rounded-xl
+              bg-white/5 text-white border border-white/20 
+              focus:border-purple-400 focus:ring-2 focus:ring-purple-400/30
+              outline-none"
+              {...register("email", { required: "Email is required" })}
+            />
+            {errors.email && (
+              <p className="text-red-400 text-xs mt-1">
+                {errors.email.message}
+              </p>
+            )}
+          </div>
+
+          {/* Phone */}
+          <div>
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              className="w-full px-4 py-4 rounded-xl
+              bg-white/5 text-white border border-white/20 
+              focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30
+              outline-none"
+              {...register("phone", { required: "Phone is required" })}
+            />
+            {errors.phone && (
+              <p className="text-red-400 text-xs mt-1">
+                {errors.phone.message}
+              </p>
+            )}
+          </div>
+
+          {/* Message */}
+          <div>
+            <textarea
+              rows="4"
+              placeholder="Message"
+              className="w-full px-4 py-4 rounded-xl
+              bg-white/5 text-white border border-white/20 
+              focus:border-pink-400 focus:ring-2 focus:ring-pink-400/30
+              outline-none resize-none"
+              {...register("comment", { required: "Comment is required" })}
+            ></textarea>
+            {errors.comment && (
+              <p className="text-red-400 text-xs mt-1">
+                {errors.comment.message}
+              </p>
+            )}
+          </div>
+
+          <button
+            type="submit"
+            className="w-full py-4 rounded-xl font-semibold text-white
+            bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500
+            hover:scale-[1.03] active:scale-95 transition-all duration-300"
+          >
+            Send Message 🚀
+          </button>
+        </div>
       </form>
     </section>
   );
