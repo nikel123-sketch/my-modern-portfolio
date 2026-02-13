@@ -136,11 +136,11 @@ const MySkills = () => {
 
       <motion.div
         className="grid grid-cols-1 md:grid-cols-2 gap-8 "
-        initial={{ opacity: 0, y: -200, scale: 1 }}
+        initial={{ opacity: 0, y: -20, scale: 1 }}
         whileInView={{ opacity: 1, y: 10, scale: 1 }}
         whileHover={{ scale: 1.03, y: 5 }}
         viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.1, ease: "easeOut" }}
       >
         {skillCategories.map((category, idx) => (
           <motion.div
@@ -156,7 +156,7 @@ const MySkills = () => {
               {/* Category Title */}
 
               <motion.h2
-                initial={{ opacity: 0, x: -300 }}
+                initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
                 className="   sm:text-2xl lg:text-3xl text-2xl font-semibold mb-6"
