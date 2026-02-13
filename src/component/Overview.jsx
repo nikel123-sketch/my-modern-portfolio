@@ -90,13 +90,20 @@ const Overview = () => {
             </div>
 
             <Link to="/Contact">
-              <motion.button
-                className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-xl shadow-lg font-medium"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <motion.h2
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="mb-4 font-bold text-xl sm:text-2xl lg:text-3xl "
               >
-                Contact Me
-              </motion.button>
+                <motion.button
+                  className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-xl shadow-lg font-medium"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Contact Me
+                </motion.button>
+              </motion.h2>
             </Link>
           </motion.div>
         </div>

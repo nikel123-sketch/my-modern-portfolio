@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Tilt from "react-parallax-tilt";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -96,7 +97,7 @@ const MySkills = () => {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.15,
+        staggerChildren: 0.1,
       },
     },
   };
@@ -131,12 +132,15 @@ const MySkills = () => {
         My Skills
       </motion.h2>
 
+      {/* start */}
+
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 overflow-hidden"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 "
+        initial={{ opacity: 0, y: -200, scale: 1 }}
+        whileInView={{ opacity: 1, y: 10, scale: 1 }}
+        whileHover={{ scale: 1.03, y: 5 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         {skillCategories.map((category, idx) => (
           <motion.div
@@ -148,35 +152,42 @@ const MySkills = () => {
               boxShadow: "0px 10px 30px rgba(0,255,255,0.3)",
             }}
           >
-            {/* Category Title */}
-            <motion.h4
-              className="text-2xl font-semibold mb-6"
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              {category.title}
-            </motion.h4>
+            <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}>
+              {/* Category Title */}
 
-            {/* Skills */}
-            <motion.div
-              className="flex flex-wrap gap-3"
-              variants={containerVariants}
-            >
-              {category.skills.map((skill, i) => (
-                <motion.div
-                  key={i}
-                  className="flex items-center gap-2 bg-cyan-700/20 px-4 py-2 rounded-full hover:bg-cyan-700 transition-colors duration-300"
-                  variants={skillVariants}
-                >
-                  {skill.icon}
-                  <span className="text-white font-medium break-words">
-                    {skill.name}
-                  </span>
-                </motion.div>
-              ))}
-            </motion.div>
+              <motion.h2
+                initial={{ opacity: 0, x: -300 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="   sm:text-2xl lg:text-3xl text-2xl font-semibold mb-6"
+              >
+               
+                
+                {category.title}
+               
+              </motion.h2>
+
+              {/* Skills */}
+
+              <motion.div
+                className="flex flex-wrap gap-3"
+                variants={containerVariants}
+              >
+                
+                {category.skills.map((skill, i) => (
+                  <motion.div
+                    key={i}
+                    className="flex items-center gap-2 bg-cyan-700/20 px-4 py-2 rounded-full hover:bg-cyan-700 transition-colors duration-300"
+                    variants={skillVariants}
+                  >
+                    {skill.icon}
+                    <span className="text-white font-medium break-words">
+                      {skill.name}
+                    </span>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </Tilt>
           </motion.div>
         ))}
       </motion.div>
