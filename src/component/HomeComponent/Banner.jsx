@@ -26,7 +26,7 @@ const Banner = () => {
     <div className="flex flex-col-reverse md:flex-row gap-6 md:gap-10 p-4 md:p-5 justify-center md:justify-between items-center overflow-hidden bg-black">
       {/* Right - My Details */}
       <motion.div
-        className="text-left dark:bg-slate-900/70 bg-white/20 backdrop-blur-md rounded-xl p-6 w-full md:w-1/2 shadow-lg shadow-violet-500"
+        className="text-left bg-black backdrop-blur-md rounded-xl p-6 w-full md:w-1/2 shadow-lg shadow-violet-500"
         initial={{ opacity: 0, y: -200, scale: 1 }}
         whileInView={{ opacity: 1, y: 10, scale: 1 }}
         whileHover={{ scale: 1.03, y: 5 }}
@@ -61,7 +61,7 @@ const Banner = () => {
 
           {/* Role */}
           <motion.h1
-            className="font-bold text-3xl text-gray-800 dark:text-gray-100 mt-2"
+            className="font-bold text-3xl text-white  mt-2"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.1, delay: 0.3 }}
@@ -71,7 +71,7 @@ const Banner = () => {
 
           {/* Description */}
           <motion.p
-            className="font-medium text-gray-900 dark:text-gray-400 leading-relaxed mt-3"
+            className="font-medium text-gray-400  leading-relaxed mt-3"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -144,6 +144,8 @@ const Banner = () => {
           </div>
         </Tilt>
       </motion.div>
+
+      
 
       {/* state */}
       <motion.div
