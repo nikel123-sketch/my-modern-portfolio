@@ -71,7 +71,7 @@ const Banner = () => {
 
           {/* Description */}
           <motion.p
-            className="font-medium text-gray-400  leading-relaxed mt-3"
+            className="font-medium text-gray-300  leading-relaxed mt-3"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -167,7 +167,7 @@ const Banner = () => {
         }}
         whileTap={{ scale: 0.95 }}
       >
-        <div className=" stats stats-horizontal sm:stats-horizontal  lg:stats-vertical shadow   ">
+        <div className=" stats stats-horizontal sm:stats-horizontal md:stats-vertical  lg:stats-vertical shadow   ">
           <div className="stat">
             <div className="stat-title font-bold text-amber-500">
               Total Projects
