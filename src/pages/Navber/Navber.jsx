@@ -50,7 +50,7 @@ const Navber = () => {
             {/* Animated Hamburger */}
             <button
               onClick={() => setOpen(!open)}
-              className="btn btn-ghost p-2"
+              className="btn  bg-indigo-600  btn-circle p-2"
             >
               <motion.div
                 animate={open ? "open" : "closed"}
@@ -88,7 +88,7 @@ const Navber = () => {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -20, scale: 0.95 }}
                   transition={{ duration: 0.25 }}
-                  className="absolute top-7 left-0 mt-4 bg-neutral-900 backdrop-blur-xl border border-amber-300 rounded-2xl shadow-2xl p-4 space-y-2 z-50"
+                  className="absolute top-7 left-0 mt-4 bg-neutral-900 text-gray-200 backdrop-blur-xl border border-green-600 rounded-2xl shadow-2xl p-4 space-y-2 z-50"
                 >
                   {renderLinks}
                 </motion.ul>
