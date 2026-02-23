@@ -187,7 +187,7 @@ const Banner = () => {
             <div className="stat-title font-bold text-amber-500">
               GitHub Repos
             </div>
-            <div className="stat-value text-green-500">56+</div>
+            <div className="stat-value text-green-500">60+</div>
             <div className="stat-desc">Public Projects</div>
           </div>
         </div>
