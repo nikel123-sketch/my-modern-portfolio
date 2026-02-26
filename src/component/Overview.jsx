@@ -30,7 +30,8 @@ const Overview = () => {
             <motion.img
               src="https://i.ibb.co/MyZL6c1n/bannrer-img.jpg"
               alt="Banner"
-              className="sm:max-w-[400px] md:max-w-[450px] lg:max-w-[400px] rounded-4xl shadow-xl shadow-purple-600  "
+              className="sm:max-w-[400px] md:max-w-[450px] lg:max-w-[400px] rounded-4xl bg-gradient-to-br from-cyan-300 via-purple-400 to-pink-900
+                    p-1  "
               initial={{ y: -10 }}
               animate={{ y: [0, 0, 10] }}
               transition={{
@@ -61,29 +62,28 @@ const Overview = () => {
               About Me
             </motion.h1>
 
-                {/* name */}
+            {/* name */}
             <motion.h1
-                        className=" font-extrabold text-3xl sm:text-4xl md:text-5xl
+              className=" font-extrabold text-3xl sm:text-4xl md:text-5xl
                            bg-gradient-to-r from-purple-300 via-indigo-300 to-pink-300
                            text-transparent bg-clip-text tracking-wide uppercase
                            transition-transform duration-500 hover:scale-105"
-                        initial={{ opacity: 0, x: 300 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.1, delay: 0.2 }}
-                      >
-                        MD NIKEL ALI
-                      </motion.h1>
-
+              initial={{ opacity: 0, x: 300 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.1, delay: 0.2 }}
+            >
+              MD NIKEL ALI
+            </motion.h1>
 
             {/* Role */}
-                      <motion.h1
-                        className="font-bold text-2xl text-white  "
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.1, delay: 0.3 }}
-                      >
-                        Frontend Developer | MERN Stack Learner
-                      </motion.h1>
+            <motion.h1
+              className="font-bold text-2xl text-white  "
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.1, delay: 0.3 }}
+            >
+              Frontend Developer | MERN Stack Learner
+            </motion.h1>
 
             {/* Tilt Section */}
             <div className="shadow-md  shadow-sky-400 rounded-3xl">

@@ -19,12 +19,21 @@ const projectsData = [
       "MongoDB",
       "Firebase Auth",
     ],
-    clientRepo:
+    Repo:
       "https://github.com/nikel123-sketch/Zap-Shift-Final-Project-Client",
-    serverRepo:
-      "https://github.com/nikel123-sketch/Zap-Shift-Final-Project-Server",
+    GitHup: "https://github.com/nikel123-sketch",
     livLink: "https://zap-shift-project-server.web.app",
     image: "https://i.ibb.co.com/yFHjTmCS/banner1.png",
+  },
+  {
+    name: "Next.Js Dev-Sotry (project structure)",
+    description:
+      "A fast, modern Next.js project with clean structure, App Router, nested routes, and reusable components.",
+    tech: ["HTML", "Tailwind CSS", "JavaScript", "React", "Next.js"],
+    Repo:'https://github.com/nikel123-sketch/Dev-Story-Next-Js-Fast-Project',
+    GitHup: "https://github.com/nikel123-sketch",
+    livLink: "https://dev-story-kappa.vercel.app",
+    image: "https://i.ibb.co.com/FknSDHdD/2026-02-26-15-54-45.png",
   },
 ];
 
@@ -117,19 +126,19 @@ const Projects = () => {
                   {/* Buttons */}
                   <div className="flex gap-3">
                     <a
-                      href={project.clientRepo}
+                      href={project.Repo}
                       target="_blank"
                       className="flex-1 text-center py-2 rounded-lg bg-cyan-600 hover:bg-cyan-500 transition font-medium"
                     >
-                      Client
+                      Repo
                     </a>
 
                     <a
-                      href={project.serverRepo}
+                      href={project.GitHup}
                       target="_blank"
                       className="flex-1 text-center py-2 rounded-lg bg-cyan-600 hover:bg-cyan-500 transition font-medium"
                     >
-                      Server
+                      GitHup
                     </a>
 
                     <a

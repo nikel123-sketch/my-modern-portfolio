@@ -26,7 +26,7 @@ const Banner = () => {
     <div className="flex flex-col-reverse md:flex-row gap-6 md:gap-10 p-4 md:p-5 justify-center md:justify-between items-center overflow-hidden bg-black">
       {/* Right - My Details */}
       <motion.div
-        className="text-left bg-black backdrop-blur-md rounded-xl p-6 w-full md:w-1/2 shadow-lg shadow-violet-500"
+        className="text-left bg-black backdrop-blur-md rounded-xl p-6 w-full md:w-1/2 "
         initial={{ opacity: 0, y: -200, scale: 1 }}
         whileInView={{ opacity: 1, y: 10, scale: 1 }}
         whileHover={{ scale: 1.03, y: 5 }}
@@ -145,8 +145,6 @@ const Banner = () => {
         </Tilt>
       </motion.div>
 
-      
-
       {/* state */}
       <motion.div
         className="flex justify-center md:justify-start"
@@ -187,7 +185,7 @@ const Banner = () => {
             <div className="stat-title font-bold text-amber-500">
               GitHub Repos
             </div>
-            <div className="stat-value text-green-500">60+</div>
+            <div className="stat-value text-green-500">65+</div>
             <div className="stat-desc">Public Projects</div>
           </div>
         </div>
@@ -216,7 +214,15 @@ const Banner = () => {
         <motion.img
           src="https://i.ibb.co/MyZL6c1n/bannrer-img.jpg"
           alt="Banner"
-          className="max-w-[90%] sm:max-w-[400px] md:max-w-[450px] lg:max-w-[400px] rounded-4xl shadow-xl shadow-purple-600  "
+          className="
+                    max-w-[90%] sm:max-w-[400px] md:max-w-[450px] lg:max-w-[400px]
+                    rounded-[2.5rem]  
+                    bg-gradient-to-br from-cyan-400 via-purple-600 to-pink-500
+                    p-1
+                    border border-white/10
+                    backdrop-blur-lg
+                    transition-transform duration-300 
+                  "
           initial={{ y: -10 }}
           animate={{ y: [0, 0, 10] }} // subtle floating animation
           transition={{
