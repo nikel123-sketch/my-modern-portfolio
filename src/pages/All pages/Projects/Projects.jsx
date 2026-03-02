@@ -19,18 +19,34 @@ const projectsData = [
       "MongoDB",
       "Firebase Auth",
     ],
-    Repo:
-      "https://github.com/nikel123-sketch/Zap-Shift-Final-Project-Client",
+    Repo: "https://github.com/nikel123-sketch/Zap-Shift-Final-Project-Client",
     GitHup: "https://github.com/nikel123-sketch",
     livLink: "https://zap-shift-project-server.web.app",
     image: "https://i.ibb.co.com/yFHjTmCS/banner1.png",
+  },
+  {
+    name: "Client Protfolio Website",
+    description:
+      "A modern personal portfolio website built with React, Tailwind CSS, and responsive design to showcase projects, skills, and experience.",
+    tech: [
+      "HTML",
+      "Tailwind CSS",
+      "JavaScript",
+      "React",
+      "React Router",
+      "React Query",
+    ],
+    Repo: "https://github.com/nikel123-sketch/Abu-Bokkor-Protfolio-Client",
+    GitHup: "https://github.com/nikel123-sketch",
+    livLink: "https://abu-bookor-siddik.vercel.app/",
+    image: "https://i.ibb.co.com/hx168Xmg/banner.png",
   },
   {
     name: "Next.Js Dev-Sotry (project structure)",
     description:
       "A fast, modern Next.js project with clean structure, App Router, nested routes, and reusable components.",
     tech: ["HTML", "Tailwind CSS", "JavaScript", "React", "Next.js"],
-    Repo:'https://github.com/nikel123-sketch/Dev-Story-Next-Js-Fast-Project',
+    Repo: "https://github.com/nikel123-sketch/Dev-Story-Next-Js-Fast-Project",
     GitHup: "https://github.com/nikel123-sketch",
     livLink: "https://dev-story-kappa.vercel.app",
     image: "https://i.ibb.co.com/FknSDHdD/2026-02-26-15-54-45.png",

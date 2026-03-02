@@ -25,7 +25,7 @@ const Contact = () => {
     {
       name: "Facebook",
       icon: <Facebook size={22} />,
-      link: "https://www.facebook.com/nowsad.hossan.nikil.rubel",
+      link: "https://www.facebook.com/profile.php?id=61587802627591",
     },
     {
       name: "YouTube",
@@ -35,7 +35,7 @@ const Contact = () => {
     {
       name: "TikTok",
       icon: <FaTiktok size={22} />,
-      link: "https://www.tiktok.com/@code.with.nowsad",
+      link: "https://www.tiktok.com/@webqoragency0",
     },
   ];
 

@@ -10,14 +10,14 @@ import Tilt from "react-parallax-tilt";
 const icons = [
   {
     icon: facebook,
-    link: "https://www.facebook.com/profile.php?id=61585944509199",
+    link: "https://www.facebook.com/profile.php?id=61587802627591",
   },
   // { icon: whatsapp, link: "" },
   // { icon: linkdin, link: "https://www.linkedin.com/in/md-nikel-ali-34731a3ab" },
   { icon: githup, link: "https://github.com/nikel123-sketch" },
   // { icon: email, link: "mailto:webdevelopernikel@gmail.com" },
   { icon: youtube, link: "https://www.youtube.com/@CodeWithNowsad" },
-  { icon: tiktok, link: "https://www.tiktok.com/@code.with.nowsad" },
+  { icon: tiktok, link: "https://www.tiktok.com/@webqoragency0" },
 ];
 
 const Banner = () => {
@@ -170,7 +170,7 @@ const Banner = () => {
             <div className="stat-title font-bold text-amber-500">
               Total Projects
             </div>
-            <div className="stat-value text-blue-600">7+</div>
+            <div className="stat-value text-blue-600">8+</div>
             <div className="stat-desc">Completed</div>
           </div>
 
