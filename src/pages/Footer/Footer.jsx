@@ -15,7 +15,7 @@ const Footer = () => {
       {/* Social Icons */}
       <div className="flex justify-center gap-6 text-3xl mb-6">
         <a
-          href="https://www.facebook.com/nowsad.hossan.nikil.rubel"
+          href="https://www.facebook.com/profile.php?id=61587802627591"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-cyan-400 transition"
